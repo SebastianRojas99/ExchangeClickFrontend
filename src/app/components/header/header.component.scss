@@ -1,0 +1,80 @@
+@use "./../../../assets/variables.scss";
+//-----TITLE-----
+header{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: variables.$color-principal;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    place-items: center;
+    padding: 3px;
+}
+//-----LOGO-----
+.logo{
+    display: flex;
+    justify-content: space-between;
+    background-image: red;
+    border-radius: 50%;
+    width: 7rem;
+    height: 7rem;
+    margin-right: 300px;
+}
+//-----TITLE-----
+.title{
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: variables.$color-oscuro;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 0;
+    padding: 0;
+}
+a:visited{
+    color: variables.$color-oscuro;
+}
+a:active{
+    color: variables.$color-oscuro;
+
+}
+
+//-----NAVIGATION BAR-----
+
+.navigationbar{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    
+}
+.abar{
+    color: variables.$color-oscuro;
+}
+
+.navigationbar a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 0.5rem;
+    transition: all 0.3s ease-in-out;
+}
+
+//pointer
+
+.point{
+    color: #00A86B;
+}
+
+//-----MEDIAS-----
+
+@media (max-width: 768px) {
+    .logo {
+        margin-right: 20px;
+    }
+    .title{
+        font-size: 1.5rem;
+    }
+    .navigationbar{
+        display: none;
+        color: variables.$color-oscuro;
+    }
+}

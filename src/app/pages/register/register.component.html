@@ -1,0 +1,30 @@
+<div class="global">
+    <div class="container">
+        <div class="design">
+            <div class="fil3"></div>
+            <div class="fil4"></div>
+        </div>
+        <div class="login">
+            <div class="fil1 rotate"></div>
+            <div class="fil2 rotate"></div>
+            <form #registerForm="ngForm" (ngSubmit)="register()">
+                <form #registerForm="ngForm" (ngSubmit)="register()">
+                    <label for="user" class="sr-only"></label>
+                    <input class="ti" type="text" class="textinput" name="user" id="user" placeholder="Usuario" autocomplete="username" minlength="4" required="true" [(ngModel)]="registerData.UserName" #user="ngModel">
+                    <p class="error" *ngIf="user.invalid && (user.touched || user.dirty)">Ingrese un nombre de usuario válido</p>
+                    <label for="firstName" class="sr-only"></label>
+                    <input class="ti" type="text"class="textinput" name="firstName" id="firstName" placeholder="Nombre" autocomplete="firstName" minlength="3" [(ngModel)]="registerData.FirstName" #firstName="ngModel">
+                    <p class="error" *ngIf="firstName.invalid && (firstName.touched || firstName.dirty)">Ingrese un nombre válido</p>
+                    <label for="lastName" class="sr-only"></label>
+                    <input class="ti" type="text" class="textinput"name="lastName" id="lastName" placeholder="Apellido" autocomplete="lastName" minlength="3" [(ngModel)]="registerData.LastName" #lastName="ngModel">
+                    <p class="error" *ngIf="lastName.invalid && (lastName.touched || lastName.dirty)">Ingrese un apellido válido</p>
+                    <label for="password" class="sr-only"></label>
+                    <input class="ti" type="password"class="textinput" name="password" id="password" placeholder="Contraseña" autocomplete="current-password" minlength="8" [(ngModel)]="registerData.Password" #password="ngModel">
+                    <p class="error" *ngIf="password.invalid && (password.touched || password.dirty)">Ingrese una contraseña válida</p>
+                <button class="logbtn" type="submit" [disabled]="registerForm.invalid">Comienza</button>
+                <img class="spinner" src="./../../../assets/img/icons/spinner.svg" alt="cargando" *ngIf="cargando()">
+                <p *ngIf="errorRegister()" class="error">Error en el inicio de sesión</p>
+            </form>
+                <div class="forgot">
+                    <a [routerLink]="['/login']" routerLinkActive="router-link-active">Posees cuenta? Ingresa ahora</a>
+                </div>
