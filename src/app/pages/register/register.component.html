@@ -13,6 +13,10 @@
                     <input class="ti" type="text" class="textinput" name="user" id="user" placeholder="Usuario" autocomplete="username" minlength="4" required="true" [(ngModel)]="RegisterData.Username" #user="ngModel">
                     <p class="error" *ngIf="user.invalid && (user.touched || user.dirty)">Ingrese un nombre de usuario válido</p>
                     <label for="firstName" class="sr-only"></label>
+                    <label for="user" class="sr-only"></label>
+                    <input class="ti" type="text" class="textinput" name="user" id="user" placeholder="Mail" autocomplete="mail" minlength="10" required="true" [(ngModel)]="RegisterData.Email" #user="ngModel">
+                    <p class="error" *ngIf="user.invalid && (user.touched || user.dirty)">Ingrese un nombre de usuario válido</p>
+                    <label for="firstName" class="sr-only"></label>
                     <input class="ti" type="text"class="textinput" name="firstName" id="firstName" placeholder="Nombre" autocomplete="firstName" minlength="3" [(ngModel)]="RegisterData.Name" #firstName="ngModel">
                     <p class="error" *ngIf="firstName.invalid && (firstName.touched || firstName.dirty)">Ingrese un nombre válido</p>
                     <label for="lastName" class="sr-only"></label>

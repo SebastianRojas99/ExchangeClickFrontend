@@ -3,12 +3,13 @@ export interface RegisterData extends User {
 }
 
 export interface User{
+    Email:string,
     Username: string,
     Name: string,
     LastName: string,
 }
 
 export interface LoginData {
-    Username: string,
+    Email: string,
     Password: string
 }

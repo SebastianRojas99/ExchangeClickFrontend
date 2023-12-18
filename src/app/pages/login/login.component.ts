@@ -1,5 +1,4 @@
 import { Component, inject, signal } from '@angular/core';
-import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { LoginData } from 'src/interfaces/user';
 import { AuthService } from 'src/app/services/auth.service';
@@ -17,7 +16,7 @@ export class LoginComponent {
   cargando = signal(false);
 
   loginData: LoginData= {
-    Username:"",
+    Email:"",
     Password: ""
   }
 

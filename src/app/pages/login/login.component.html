@@ -9,7 +9,7 @@
             <h3 class="title">Inicia sesion<span class="point">.</span></h3>
             <div class="textinput">
                 <label for="user" class="sr-only"></label>
-                <input class="ti" type="text" name="user" id="user" [(ngModel)]="loginData.Username" #user="ngModel"
+                <input class="ti" type="text" name="user" id="user" [(ngModel)]="loginData.Email" #user="ngModel"
                 placeholder="Usuario" autocomplete="username"
                 required>
             </div>
@@ -17,7 +17,7 @@
             <div class="textinput">
                 <label for="email" class="sr-only"></label>
                 <input class="ti" type="password" name="password" id="password" placeholder="Contraseña"
-                autocomplete="current-password" required minlength="8" [(ngModel)]="loginData.Password"  #password="ngModel">
+                autocomplete="current-password" required minlength="6" [(ngModel)]="loginData.Password"  #password="ngModel">
             </div>
             <button  type="submit" [disabled]="loginForm.invalid" class="logbtn">Explora</button>
             <p *ngIf="errorLogin()" class="myerror">Error al iniciar sesion</p>

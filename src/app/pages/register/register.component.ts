@@ -16,6 +16,7 @@ export class RegisterComponent {
 
   RegisterData: RegisterData = {
     Username: "",
+    Email:"",
     Name: "",
     LastName: "",
     Password: "",
