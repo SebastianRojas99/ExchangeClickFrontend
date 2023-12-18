@@ -1,4 +1,4 @@
-export interface subscription 
+export interface Subscription 
 {
 SubscriptionId: number;
 SubscriptionName: string;

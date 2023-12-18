@@ -3,6 +3,6 @@
     <span class="title">Exchange click</span>
     <nav class="navigationbar">
         <a [routerLink]="['/login']" class="abar" >Convertir<span class="point">.</span></a>
-        <a class="abar" [routerLink]="['/register']">Salir<span class="point">.</span></a>
+        <a class="abar" [routerLink]="['/register']" (click)="logout()">Salir<span class="point">.</span></a>
     </nav>
 </header>

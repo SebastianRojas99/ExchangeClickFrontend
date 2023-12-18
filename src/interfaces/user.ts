@@ -1,12 +1,14 @@
-import { Rol } from '././../Enums/enum';
+export interface RegisterData extends User {
+    Password: string,
+}
 
-export interface user
-{
-    UserId: number;
-    Name: string;
-    LastName: string;
-    Username: string;
-    Password: string;
-    Email: string;
-    Role:Rol;
+export interface User{
+    Username: string,
+    Name: string,
+    LastName: string,
+}
+
+export interface LoginData {
+    Username: string,
+    Password: string
 }

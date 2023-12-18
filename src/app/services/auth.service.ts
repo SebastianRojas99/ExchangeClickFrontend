@@ -6,7 +6,7 @@ import {
     signal,
 } from '@angular/core';
 import { API } from '../constants/api';
-import { LoginData,RegisterData } from 'src/app/interfaces/user';
+import { LoginData,RegisterData } from 'src/interfaces/user';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -21,7 +21,7 @@ export class AuthService {
 
     async login(loginData: LoginData) {
     try {
-        const res = await fetch(API + 'authentication/authenticate', {
+        const res = await fetch(API + 'Auth/authenticate', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
