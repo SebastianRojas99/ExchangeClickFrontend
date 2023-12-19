@@ -13,7 +13,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class CurrencylistComponent {
   router = inject(Router);
-  @Input({required:true}) c!:Currency;
+  @Input({required:true}) currency!:Currency;
 
 }
 

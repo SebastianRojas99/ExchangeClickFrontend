@@ -2,18 +2,18 @@ import { User } from "./user";
 
 export interface Currency
 {
-    CurrencyId: number;
-    CurrencyName: string;
-    CurrencySymbol: string;
-    CurrencyValue: number;
+    currencyId: number;
+    currencyName: string;
+    currencySymbol: string;
+    currencyValue: number;
 }
 
 export interface c2
 {
-    CurrencyId: number;
-    CurrencyName: string;
-    CurrencySymbol: string;
-    CurrencyValue: number;
+    currencyId: number;
+    currencyName: string;
+    currencySymbol: string;
+    currencyValue: number;
     User?:User;
-    UserId:number;
+    userId:number;
 }

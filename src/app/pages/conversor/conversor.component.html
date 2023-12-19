@@ -1,4 +1,5 @@
 <h2>Conversor</h2>
-<div>
-    <app-currencylist *ngFor="let currency of currencies" [c]="currency" [routerLink]="[currency.CurrencyId]"></app-currencylist>
+<div class="global">
+    <h3 class="title">Moneda</h3>
+    <app-currencylist class="listcomp" *ngFor="let c of currencies" [currency]="c" [routerLink]="[c.currencyId]"></app-currencylist>
 </div>

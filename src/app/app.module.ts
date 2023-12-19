@@ -5,7 +5,6 @@ import { FooterComponent } from './components/footer/footer.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import { CurrencylistComponent } from './components/currencylist/currencylist.component';
 
 
 @NgModule({
@@ -21,7 +20,6 @@ import { CurrencylistComponent } from './components/currencylist/currencylist.co
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    CurrencylistComponent
   ],
 })
 export class AppModule { }
