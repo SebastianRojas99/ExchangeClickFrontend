@@ -1,6 +1,6 @@
 import { Component, Signal, WritableSignal, inject, signal } from '@angular/core';
 import { Router } from '@angular/router';
-import { RegisterData } from 'src/interfaces/user';
+import { RegisterData } from 'src/app/interfaces/user';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({

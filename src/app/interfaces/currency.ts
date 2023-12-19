@@ -1,6 +1,14 @@
 import { User } from "./user";
 
-export interface currency
+export interface Currency
+{
+    CurrencyId: number;
+    CurrencyName: string;
+    CurrencySymbol: string;
+    CurrencyValue: number;
+}
+
+export interface c2
 {
     CurrencyId: number;
     CurrencyName: string;
@@ -8,11 +16,4 @@ export interface currency
     CurrencyValue: number;
     User?:User;
     UserId:number;
-}
-
-export interface currencyConversion
-{
-    CurrencySymbol: string;
-    CurrencyValue: number;
-    ConvertedValue: number;
 }

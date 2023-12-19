@@ -6,7 +6,7 @@ import {
     signal,
 } from '@angular/core';
 import { API } from '../constants/api';
-import { LoginData,RegisterData } from 'src/interfaces/user';
+import { LoginData,RegisterData } from 'src/app/interfaces/user';
 import { Router } from '@angular/router';
 
 @Injectable({

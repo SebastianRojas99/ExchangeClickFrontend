@@ -6,7 +6,7 @@ export const usuarionologGuard: CanActivateFn = async (route,state) =>{
     const auth = inject(AuthService);
     if (auth.token()){
         const router = inject(Router);
-        router.navigate(['/conversor']);
+        router.navigate(['conversor']);
         return false;
     }
     return true;

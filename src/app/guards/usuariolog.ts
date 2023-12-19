@@ -3,11 +3,11 @@ import {  CanActivateFn, Router } from "@angular/router";
 import { AuthService } from "../services/auth.service";
 import { state } from "@angular/animations";
 
-export const usuariologGuard: CanActivateFn = async (route,state) =>{
+export const usuariologGuard: CanActivateFn = (route,state) =>{
     const auth = inject(AuthService);
     if (!auth.token()){
         const router = inject(Router);
-        router.navigate(['/login']);
+        router.navigate(['login']);
         return false;
     }
     return true;

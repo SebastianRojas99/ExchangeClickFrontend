@@ -1,1 +1,4 @@
-<p>conversor works!</p>
+<h2>Conversor</h2>
+<div>
+    <app-currencylist *ngFor="let currency of currencies" [c]="currency" [routerLink]="[currency.CurrencyId]"></app-currencylist>
+</div>
