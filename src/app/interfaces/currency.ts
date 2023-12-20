@@ -17,3 +17,13 @@ export interface c2
     User?:User;
     userId:number;
 }
+
+export interface ToConversion
+{
+    currencySymbol:string;
+}
+
+export interface FromConversion
+{
+    currencySymbol:string;
+}
