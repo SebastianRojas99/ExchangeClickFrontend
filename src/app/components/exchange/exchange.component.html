@@ -1,4 +1,6 @@
-<input type="text" [(ngModel)]="fromconversion.currencySymbol" placeholder="From currency">
-<input type="text" [(ngModel)]="toconversion.currencySymbol" placeholder="To currency">
-<input type="text" [(ngModel)]="quantity" placeholder="To currency">
-<button (click)="exchange()">Convert</button>
+<div class="inp-conversion">
+    <input type="text" [(ngModel)]="fromconversion.currencySymbol" placeholder="From currency">
+    <input type="text" [(ngModel)]="toconversion.currencySymbol" placeholder="To currency">
+    <input type="text" [(ngModel)]="quantity" placeholder="Quantity">
+    <button (click)="exchange()">Convertir</button>
+</div>
