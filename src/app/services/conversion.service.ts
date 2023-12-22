@@ -18,8 +18,8 @@ export class ConversionService extends ApiService
               Authorization: "Bearer " + this.auth.token()
             },
             body: JSON.stringify({
-              symbol1: fromconversion.currencySymbol,
-              symbol2: toconversion.currencySymbol,
+              Symbol1: fromconversion.currencySymbol,
+              Symbol2: toconversion.currencySymbol,
               quantity
           })
           });
