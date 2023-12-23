@@ -1,8 +1,41 @@
+.global{
+    display:grid;
+    grid-template-columns: repeat(2,50%);
+    width: 80vw;
+    height: 80vh;
+    grid-template-areas: "listcomp exchange";
+    background: rgb(2,0,36);
+    background: linear-gradient(354deg, rgba(2,0,36,1) 0%, rgba(54,9,121,1) 77%, rgba(94,7,214,1) 100%);
+    overflow: hidden;
+    
+}
 .title{
     display:grid;
     place-items: center;
 }
+.container {
+    background: rgb(2,0,36);
+    background: linear-gradient(354deg, rgba(2,0,36,1) 0%, rgba(54,9,121,1) 77%, rgba(94,7,214,1) 100%);
+}
+
+
 .listcomp{
-    width: 50%;
-    height: 50%;
+    position: relative;
+    margin: 0 auto;
+}
+.exchange{
+    box-shadow: 0 0 17px 10px rgb(0,0,0,30%);
+    border-radius: 15px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+@media (min-width>768px){
+    .container{
+        grid-template-columns: 50% 50%;
+        grid-template-areas: "listcomp exchange";
+    }
 }

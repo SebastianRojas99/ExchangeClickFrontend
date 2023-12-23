@@ -1,32 +1,76 @@
 @use "./../../../assets/variables.scss";
-.inp-conversion{
-    display:  grid;
-    grid-template-columns: repeat(4,1fr);
-    place-items: center;
-}
-input{
+
+.inp-conversion {
+    display: grid;
+    grid-template-columns: auto;
+    align-items: center;
+    margin: 0 auto;
     width: 100%;
-    height: 40px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 0 10px;
+    max-width: 300px;
+
+    input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
     font-size: 16px;
-    outline: none;
-    text-align: center;
-    margin: 10px 0;
+
+    &:focus {
+        border-color: variables.$color-principal;
+        outline: none;
+        box-shadow: 0 0 5px variables.$color-principal;
+    }
+
+    &::placeholder {
+        color: #aaa;
+    }
+    }
 }
-button{
-    width: 80%;
-    height: 40px;
-    border: none;
-    border-radius: 5px;
-    padding: 0 10px;
+.btn {
+    display: grid;
+    place-items: center;
+    margin-top: 20px;
+
+    button {
+    padding: 10px 20px;
     font-size: 16px;
-    outline: none;
-    text-align: center;
-    margin: 10px 0;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
-    background: variables.$color-principal;
-    color: #fff;
-    transition: all 0.3s ease-in-out;
+    transition: background-color 0.3s ease;
+
+    &:first-child {
+        background-color: variables.$color-principal;
+        color: white;
+
+        &:hover {
+        background-color: variables.$color-primario-claro;
+        }
+    }
+
+    &:last-child {
+        background-color: #6c757d;
+        color: white;
+
+        &:hover {
+        background-color: #5a6268;
+        }
+    }
+    }
+}
+.result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    margin-top: 30px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: variables.$color-secundario;
+
+    p {
+    font-size: 18px;
+    color: #333;
+    }
 }

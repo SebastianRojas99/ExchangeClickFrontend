@@ -18,18 +18,26 @@ export class ExchangeComponent {
   quantity:number = 0
   @Input() fromconversion:FromConversion  = { currencySymbol:'' };
   @Input() toconversion:ToConversion = { currencySymbol:'' };
-async exchange() {
-  try {
-    const res = await this.conversionService.conversion(
-      this.fromconversion,
-      this.toconversion,
-      this.quantity
-  );
-      console.log(res); // Imprime la respuesta en la consola
-      // Resto del código...
-  } catch (error) {
-      // Puedes mostrar un mensaje de error al usuario si es necesario
+  conversionresult:number = 0
+  async exchange() {
+    try {
+      const res = await this.conversionService.conversion(
+        this.fromconversion,
+        this.toconversion,
+        this.quantity
+      );
+      this.conversionresult = Number(res.conversionRate);
+    } catch (error) {
+      // Handle errors...
+    }
   }
+async swap() {
+  // Create a temporary variable to hold the `fromconversion` symbol
+  const tempSymbol = this.fromconversion.currencySymbol;
+
+  // Swap the symbols visually
+  this.fromconversion.currencySymbol = this.toconversion.currencySymbol;
+  this.toconversion.currencySymbol = tempSymbol;
 }
 }
 
