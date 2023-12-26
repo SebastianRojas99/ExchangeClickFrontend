@@ -60,11 +60,11 @@
     }
 }
 .result {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    place-items: center;
     height: 50px;
-    margin-top: 30px;
+    width: 50%;
+    margin: 30px auto 0;
     border: 1px solid #ccc;
     border-radius: 4px;
     background-color: variables.$color-secundario;
