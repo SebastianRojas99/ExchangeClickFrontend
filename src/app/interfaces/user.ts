@@ -24,3 +24,7 @@ export interface LoginData {
     Email: string,
     Password: string
 }
+export interface SC{
+    userId:number,
+    subCount:number
+}

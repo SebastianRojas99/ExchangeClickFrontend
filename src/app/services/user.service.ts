@@ -8,7 +8,7 @@ import { ApiService } from './api.service';
 
 export class UserService extends ApiService{
     async getSub():Promise<number>{
-        const res = await this.getAuth("User")
+        const res = await this.getAuth("User/${Id}")
         const resJson = await res.json();
         return resJson;
     };
