@@ -1,14 +1,16 @@
-
+<app-subscriptioncount class="counter"></app-subscriptioncount>
 <div class="global">
-    <app-subscriptioncount class="counter"></app-subscriptioncount>
-    <div class="container">
+    <div class="region1">
         <div class="listcomp">
             <h3 class="title">Moneda</h3>
             <app-currencylist  *ngFor="let c of currencies" [currency]="c" [routerLink]="[c.currencyId]"></app-currencylist>
         </div>
     </div>
-    <div class="exchange">
+    <div class="region2">
         <h3 class="title">Convertir</h3>
         <app-exchange ></app-exchange>
+    </div>
+    <div class="region3">
+        <app-sidebar></app-sidebar>
     </div>
 </div>

@@ -6,6 +6,7 @@ import { ConversorComponent } from './conversor.component';
 import { CurrencylistComponent } from 'src/app/components/currencylist/currencylist.component';
 import { ExchangeComponent } from 'src/app/components/exchange/exchange.component';
 import { SubscriptioncountComponent } from "../../components/subscriptioncount/subscriptioncount.component";
+import { SidebarComponent } from "../../components/sidebar/sidebar.component";
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { SubscriptioncountComponent } from "../../components/subscriptioncount/s
         ConversorRoutingModule,
         CurrencylistComponent,
         ExchangeComponent,
-        SubscriptioncountComponent
+        SubscriptioncountComponent,
+        SidebarComponent
     ]
 })
 export class ConversorModule { }
