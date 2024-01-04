@@ -4,10 +4,11 @@ header{
     position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    background-color: variables.$color-principal;
+    background: variables.$color-blanco-puro;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     place-items: center;
     padding: 3px;
+    color: variables.$color-oscuro-puro;
 }
 //-----LOGO-----
 .logo{
@@ -24,16 +25,16 @@ header{
     text-align: center;
     font-size: 36px;
     font-weight: bold;
-    color: variables.$color-oscuro;
+    color: variables.$color-oscuro-puro;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     margin: 0;
     padding: 0;
 }
 a:visited{
-    color: variables.$color-oscuro;
+    color: variables.$color-oscuro-puro;
 }
 a:active{
-    color: variables.$color-oscuro;
+    color: variables.$color-oscuro-puro;
 
 }
 
@@ -45,12 +46,11 @@ a:active{
     
 }
 .abar{
-    color: variables.$color-oscuro;
+    color: variables.$color-oscuro-puro;
 }
 
 .navigationbar a{
     text-decoration: none;
-    color: white;
     font-size: 1.5rem;
     font-weight: bold;
     text-align: center;

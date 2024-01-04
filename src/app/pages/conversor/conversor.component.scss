@@ -1,4 +1,52 @@
-
+@use "./../../../assets/variables.scss";
 .title{
     text-align: center;
+    color:variables.$color-blanco-puro;
+}
+
+.global{
+    display: grid;//acomodar las 3 columnas y que una sea el menu, llamado app-sidebar
+    grid-template-columns: 40% 50% 10%;//1fr es 1 fraccion, 3fr es 3 fracciones
+    grid-template-rows: 1fr;
+    grid-template-areas: "app-sidebar app-conversor app-sidebar";//areas de la grilla
+    align-items: center;
+    height: 100vh;
+    background-color: variables.$color-oscuro-puro;
+}
+.region1 .region2 .region3{
+    background: none;
+}
+
+.region2{
+    display: grid;
+    place-items: center;
+    border-left: 1px solid variables.$color-blanco-puro;
+}
+.region3{
+    display: grid;
+    place-items: center;
+    border-left: 1px solid variables.$color-blanco-puro;
+}
+
+//acomodar para modo celular vertical en media query
+@media (max-width: 768px) {
+    .global{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: "app-sidebar" "app-conversor" "app-sidebar";
+        height: auto;
+    }
+    .mobile-message {
+        display: block;
+    }
+    
+    .region2{
+        border-top: 1px solid variables.$color-blanco-puro;
+    }
+    .region3{
+        border-top: 1px solid variables.$color-blanco-puro;
+    }
+    .region1 .region2 .region3{
+        border-left: none;
+    }
 }
