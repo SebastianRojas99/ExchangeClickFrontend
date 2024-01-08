@@ -28,3 +28,13 @@ export interface SC{
     userId:number,
     subCount:number
 }
+export interface Profile{
+    userId:number,
+    name:string,
+    lastName:string,
+    email:string,
+    username:string,
+    subscriptionId:number,
+    subscriptionName:string,
+    subCount:number,
+}

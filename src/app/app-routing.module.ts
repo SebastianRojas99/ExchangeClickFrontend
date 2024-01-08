@@ -21,6 +21,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/conversor/conversor.module').then(m => m.ConversorModule)
   },
   {
+    path:'profile/:userId',
+    loadChildren: () => import('./pages/profile/profile.module').then(m => m.ProfileModule)
+  },
+  {
     path:'',// path vacio porque es la ruta principal
     redirectTo:'conversor',//se usa para redireccionar al conversor
     pathMatch:'full', // indica que la ruta debe ser exactamente igual a la que se indica en el path

@@ -7,6 +7,7 @@ import { CurrencylistComponent } from 'src/app/components/currencylist/currencyl
 import { ExchangeComponent } from 'src/app/components/exchange/exchange.component';
 import { SubscriptioncountComponent } from "../../components/subscriptioncount/subscriptioncount.component";
 import { SidebarComponent } from "../../components/sidebar/sidebar.component";
+import { ProfileComponent } from '../profile/profile.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { SidebarComponent } from "../../components/sidebar/sidebar.component";
         CurrencylistComponent,
         ExchangeComponent,
         SubscriptioncountComponent,
-        SidebarComponent
+        SidebarComponent,
+
     ]
 })
 export class ConversorModule { }

@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener, inject } from '@angular/core';
+import { Component, OnInit, HostListener, inject, Input } from '@angular/core';
 import { CurrencyService } from 'src/app/services/currency.service';
 import { Currency } from 'src/app/interfaces/currency';
 

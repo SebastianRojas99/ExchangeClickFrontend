@@ -1,0 +1,46 @@
+@use "./../../../assets/variables.scss";
+.global{
+    display: grid;
+    place-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+
+.container{
+    width: 55vw !important;
+    height: 80vh;
+    display: grid;
+    grid-template-columns: 100%;
+    background-color: variables.$color-oscuro-puro;
+    background-repeat: no-repeat;
+    place-items: center;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 0 17px 10px rgb(0,0,0,30%);
+    border-radius: 20px;
+    
+}
+
+
+.cont{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    color: #fff;
+}
+
+.container .subName{
+    font-size: 2rem;
+    color: #fff;
+    display: flex;
+    margin-left: 68%;
+    font-weight: bold;
+    padding: 0.5rem;
+}
+.nom,.ape{
+    font-size: 1rem;
+    color: #fff;
+}
+p{
+    color: red;
+}

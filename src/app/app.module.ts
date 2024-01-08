@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { ExchangeComponent } from './components/exchange/exchange.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { ExchangeComponent } from './components/exchange/exchange.component';
     AppComponent,
     HeaderComponent,
     FooterComponent,
+    ProfileComponent,
   ],
 
   providers: [],
