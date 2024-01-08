@@ -7,23 +7,24 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { ExchangeComponent } from './components/exchange/exchange.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { ProfileIconComponent } from "./components/profile-icon/profile-icon.component";
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    ProfileComponent,
-  ],
-
-  providers: [],
-  bootstrap: [AppComponent],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    ExchangeComponent
-  ],
+    declarations: [
+        AppComponent,
+        HeaderComponent,
+        FooterComponent,
+        ProfileComponent,
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        ExchangeComponent,
+        ProfileIconComponent
+    ]
 })
 export class AppModule { }

@@ -21,12 +21,10 @@
 .region2{
     display: grid;
     place-items: center;
-    border-left: 1px solid variables.$color-blanco-puro;
 }
 .region3{
     display: grid;
     place-items: center;
-    border-left: 1px solid variables.$color-blanco-puro;
 }
 
 //acomodar para modo celular vertical en media query
@@ -34,20 +32,15 @@
     .global{
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr 1fr;
-        grid-template-areas: "app-sidebar" "app-conversor" "app-sidebar";
+        grid-template-areas: "app-sidebar" "region1" "region2";
         height: auto;
     }
     .mobile-message {
         display: block;
     }
-    
-    .region2{
-        border-top: 1px solid variables.$color-blanco-puro;
-    }
-    .region3{
-        border-top: 1px solid variables.$color-blanco-puro;
-    }
     .region1 .region2 .region3{
         border-left: none;
     }
+    //pasar sidebar hacia arriba y en fila
+    
 }

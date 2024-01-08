@@ -1,10 +1,18 @@
 <div class="global">
     <div class="container">
-        <p>{{user.userId}}</p>
-        <p class="nom">{{user.name}}</p>
-        <p class="ape">{{user.lastName}}</p>
-        <p>{{user.email}}</p>
-        <p class="subName">{{user.subscriptionName}}</p>
-        <p>{{user.subCount}}</p>
+            <div class="region1">
+                <app-profile-icon [user]="user"></app-profile-icon>
+                <div class="nameandlast">
+                    <p class="nom">{{user.name}}</p>
+                    <p class="ape">{{user.lastName}}</p>
+                </div>
+                <p class="rol">{{user.role}}</p>
+            </div>
+            <div class="region2">
+                <p>{{user.username}}</p>
+                <p>{{user.email}}</p>
+                <p class="subName">{{user.subscriptionName}}</p>
+                <p>cambios restantes: {{user.subCount}}</p>
+        </div>
     </div>
 </div>

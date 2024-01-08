@@ -1,0 +1,18 @@
+@use "./../../../assets/variables.scss";
+.profile-icon {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: variables.$color-oscuro-puro;
+  color: variables.$color-blanco-puro;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

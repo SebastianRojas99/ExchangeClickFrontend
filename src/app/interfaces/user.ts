@@ -34,6 +34,7 @@ export interface Profile{
     lastName:string,
     email:string,
     username:string,
+    role:string,
     subscriptionId:number,
     subscriptionName:string,
     subCount:number,

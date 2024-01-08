@@ -19,6 +19,7 @@ export class ProfileComponent implements OnInit {
     lastName: '',
     email: '',
     username: '',
+    role: '',
     subscriptionId: 0,
     subscriptionName: '',
     subCount: 0,

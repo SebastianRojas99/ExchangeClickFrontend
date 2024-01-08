@@ -22,26 +22,27 @@
     }
 
     &::placeholder {
-        color: #aaa;
+        color: variables.$color-gris-puro;
     }
     }
 }
 .btn {
     display: grid;
     place-items: center;
-    margin-top: 20px;
-
+    margin-top: 30px;
     button {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 15px;
     padding: 10px 20px;
     font-size: 16px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-
     &:first-child {
         background-color: variables.$color-principal;
-        color: white;
+        color: variables.$color-blanco-puro;
 
         &:hover {
         background-color: variables.$color-primario-claro;
@@ -49,11 +50,12 @@
     }
 
     &:last-child {
-        background-color: #6c757d;
+        background-color: variables.$color-gris-puro;
         color: white;
 
         &:hover {
-        background-color: #5a6268;
+        background-color: variables.$color-blanco-puro;
+        color: variables.$color-oscuro-puro;
         }
     }
     }
@@ -63,13 +65,13 @@
     place-items: center;
     height: 50px;
     width: 100%;
-    margin: 30px auto 0;
+    margin: 35px auto 0;
     border: 1px solid #ccc;
     border-radius: 4px;
-    background-color: variables.$color-secundario;
+    background-color: variables.$color-principal;
 
     p {
     font-size: 18px;
-    color: #333;
+    color: variables.$color-blanco-puro;
     }
 }
