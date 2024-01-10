@@ -8,6 +8,7 @@ import { ExchangeComponent } from 'src/app/components/exchange/exchange.componen
 import { SubscriptioncountComponent } from "../../components/subscriptioncount/subscriptioncount.component";
 import { SidebarComponent } from "../../components/sidebar/sidebar.component";
 import { ProfileComponent } from '../profile/profile.component';
+import { ProfileIconComponent } from "../../components/profile-icon/profile-icon.component";
 
 
 @NgModule({
@@ -21,7 +22,7 @@ import { ProfileComponent } from '../profile/profile.component';
         ExchangeComponent,
         SubscriptioncountComponent,
         SidebarComponent,
-
+        ProfileIconComponent
     ]
 })
 export class ConversorModule { }

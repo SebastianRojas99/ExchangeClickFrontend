@@ -1,5 +1,5 @@
 import { Injectable, inject } from '@angular/core';
-import { Currency } from '../interfaces/currency';
+import { Currency, CurrencyForCreation } from '../interfaces/currency';
 import { API } from '../constants/api';
 import { ApiService } from './api.service';
 @Injectable({
@@ -15,4 +15,38 @@ export class CurrencyService extends ApiService{
         return resJson;
     };
 
+    async create(currency:CurrencyForCreation):Promise<boolean>{
+        if(currency.currencySymbol) return false;
+        const res = await fetch(API+'Currency/crear-nueva-moneda',{
+        method:'POST',
+        headers:{
+            "Content-type":"application/json",
+        Authorization: "Bearer "+this.auth.token()
+        },
+        body: JSON.stringify(currency)
+        })
+        return res.ok
+    };
+    async delete(id:number):Promise<boolean>{
+        const res = await fetch(API+'Currency?id='+id,{
+        method:'DELETE',
+        headers:{
+            "Content-type":"application/json",
+            Authorization: "Bearer "+this.auth.token()
+        },
+        })
+        return res.ok
+    };
+    async update(currency:CurrencyForCreation):Promise<boolean>{
+        if(!currency.currencySymbol) return false;
+        const res = await fetch(API+'Currency/actualizar-moneda',{
+        method:'PUT',
+        headers:{
+            "Content-type":"application/json",
+            Authorization: "Bearer "+this.auth.token()
+        },
+        body: JSON.stringify(currency)
+        })
+        return res.ok
+    };
 }

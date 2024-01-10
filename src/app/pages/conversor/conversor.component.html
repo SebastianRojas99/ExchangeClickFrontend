@@ -1,9 +1,11 @@
+
 <app-subscriptioncount class="counter"></app-subscriptioncount>
 <p id="mensaje" class="mobile-message"*ngIf="isMobileResolution()">para una mejor experiencia movil descarga la app</p>
 <div class="global">
     <div class="region1">
         <div class="listcomp">
             <h3 class="title">Moneda</h3>
+            
             <app-currencylist  *ngFor="let c of currencies" [currency]="c" [routerLink]="[c.currencyId]"></app-currencylist>
         </div>
     </div>
@@ -12,6 +14,7 @@
         <app-exchange ></app-exchange>
     </div>
     <div class="region3">
+        
         <app-sidebar></app-sidebar>
     </div>
 </div>

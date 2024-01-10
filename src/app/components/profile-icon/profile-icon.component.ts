@@ -10,6 +10,6 @@ import { Profile } from 'src/app/interfaces/user';
   styleUrls: ['./profile-icon.component.scss']
 })
 export class ProfileIconComponent {
-  @Input({required:true}) user!:Profile;
+  @Input() user!:Profile;
 }
 

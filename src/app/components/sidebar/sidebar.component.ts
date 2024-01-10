@@ -1,14 +1,15 @@
-import { Component, Input } from '@angular/core';
+import { Component,Input, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+import { Profile } from 'src/app/interfaces/user';
+import { ProfileIconComponent } from "../profile-icon/profile-icon.component";
 
 @Component({
-  selector: 'app-sidebar',
-  standalone: true,
-  imports: [CommonModule,RouterModule],
-  templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.scss']
+    selector: 'app-sidebar',
+    standalone: true,
+    templateUrl: './sidebar.component.html',
+    styleUrls: ['./sidebar.component.scss'],
+    imports: [CommonModule, RouterModule, ProfileIconComponent]
 })
 export class SidebarComponent {
-  @Input() userId: number = 0; // Por defecto, si no se proporciona un valor, asumimos el ID 0
 }

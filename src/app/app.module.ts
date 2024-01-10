@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { ExchangeComponent } from './components/exchange/exchange.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { ProfileIconComponent } from "./components/profile-icon/profile-icon.component";
+import { CreateCurrencyComponent } from './components/create-currency/create-currency.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { ProfileIconComponent } from "./components/profile-icon/profile-icon.com
         AppRoutingModule,
         FormsModule,
         ExchangeComponent,
-        ProfileIconComponent
+        ProfileIconComponent,
+        CreateCurrencyComponent
     ]
 })
 export class AppModule { }

@@ -1,0 +1,6 @@
+<button class="fabb" (click)="dialogNuevaMoneda.showModal()">+</button>
+<dialog method="dialog" #dialogNuevaMoneda>
+    <app-create-currency (cerrarModal)="dialogNuevaMoneda.close()"></app-create-currency>
+</dialog>
+<app-currencylist  *ngFor="let c of currencies" [currency]="c" [routerLink]="[c.currencyId]"></app-currencylist>
+

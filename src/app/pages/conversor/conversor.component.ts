@@ -1,6 +1,9 @@
 import { Component, OnInit, HostListener, inject, Input } from '@angular/core';
 import { CurrencyService } from 'src/app/services/currency.service';
 import { Currency } from 'src/app/interfaces/currency';
+import { Profile } from 'src/app/interfaces/user';
+import { ActivatedRoute } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-conversor',
@@ -10,9 +13,9 @@ import { Currency } from 'src/app/interfaces/currency';
 export class ConversorComponent implements OnInit {
 
   currencyService = inject(CurrencyService);
+  activatedRoute = inject(ActivatedRoute);
   currencies: Currency[] = [];
   textoAModoMobile = '';
-
   isMobileResolution(): boolean {
     return window.innerWidth <= 768;
   }
