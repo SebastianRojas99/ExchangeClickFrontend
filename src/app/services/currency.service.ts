@@ -1,5 +1,5 @@
 import { Injectable, inject } from '@angular/core';
-import { Currency, CurrencyForCreation } from '../interfaces/currency';
+import { Currency } from '../interfaces/currency';
 import { API } from '../constants/api';
 import { ApiService } from './api.service';
 @Injectable({
@@ -19,7 +19,7 @@ export class CurrencyService extends ApiService{
         const resJson = await res.json();
         return resJson;
     };
-    async create(currency:CurrencyForCreation):Promise<boolean>{
+    async create(currency:Currency):Promise<boolean>{
         if(currency.currencyId) return false;
         const res = await fetch(API+'Currency/crear-nueva-moneda',{
         method:'POST',
@@ -31,20 +31,20 @@ export class CurrencyService extends ApiService{
         })
         return res.ok
     };
-    async update(currency:CurrencyForCreation):Promise<boolean>{
+    async update(currency:Currency):Promise<boolean>{
         if(!currency.currencyId) return false;
-        const res = await fetch(API+'Currency?currencyId='+currency.currencyId,{
-        method:'PUT',
-        headers:{
+        const res = await fetch(API+"Currency?currencyId="+currency.currencyId,{
+          method:'PUT',
+          headers:{
             "Content-type":"application/json",
             Authorization: "Bearer "+this.auth.token()
-        },
-        body: JSON.stringify(currency)
+          },
+          body: JSON.stringify(currency)
         })
         return res.ok
-    };
-    async delete(id:number):Promise<boolean>{
-        const res = await fetch(API+'Currency?id='+id,{
+      };
+    async delete(currencyId:number):Promise<boolean>{
+        const res = await fetch(API+'Currency?currencyId='+currencyId,{
         method:'DELETE',
         headers:{
             "Content-type":"application/json",

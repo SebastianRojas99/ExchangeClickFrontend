@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CurrencyService } from 'src/app/services/currency.service';
-import { Currency, CurrencyForCreation } from 'src/app/interfaces/currency';
+import { Currency } from 'src/app/interfaces/currency';
 import { generarMensajeError } from 'src/app/helpers/message';
 import Swal from 'sweetalert2';
 @Component({
@@ -13,14 +13,7 @@ export class CurrencyDetailComponent {
   currencyService=inject(CurrencyService);
   activatedRoute=inject(ActivatedRoute);
   router=inject(Router);
-  currency:CurrencyForCreation={
-    currencyId:0,
-    currencyName:"",
-    currencySymbol:"",
-    currencyValue:0,
-    userId:0,
-  }
-  currencies:Currency={
+  currency:Currency={
     currencyId:0,
     currencyName:"",
     currencySymbol:"",
@@ -29,13 +22,13 @@ export class CurrencyDetailComponent {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
       this.currencyService.getById(params['currencyId']).then(res => {
-        if(res) this.currencies = res;
+        if(res) this.currency = res;
       });
       });
   }
-  borrarContacto(){
+  borrarMoneda(){
     Swal.fire({
-      title: 'Estas seguro de eliminar el contacto '+this.currency.currencyName+' '+'?',
+      title: 'Estas seguro de eliminar la moneda '+this.currency.currencyName+' '+'?',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
@@ -48,12 +41,12 @@ export class CurrencyDetailComponent {
           if(res){
             Swal.fire(
               'Borrado!',
-              'tu contacto fue borrado.',
+              'tu moneda fue borrada.',
               'success'
             )
             this.router.navigate(['contacts']);
           }else{
-            generarMensajeError('tu contacto no fue borrado.')
+            generarMensajeError('tu moneda no fue borrada.')
           }
         }
     )}

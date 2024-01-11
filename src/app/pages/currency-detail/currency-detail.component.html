@@ -1,14 +1,14 @@
 <div class="global">
     <div class="container">
-            <p class="nom">Nombre: {{currencies.currencyName}}</p>
-            <p class="ape">Simbolo: {{currencies.currencySymbol}}</p>
-            <p> valor: {{currencies.currencyValue}}</p>
+            <p class="nom">Nombre: {{currency.currencyName}}</p>
+            <p class="ape">Simbolo: {{currency.currencySymbol}}</p>
+            <p> valor: {{currency.currencyValue}}</p>
             <div class="cont-btn">
-                <button class="logbtn" (click)="borrarContacto()">Borrar moneda</button>
+                <button class="logbtn" (click)="borrarMoneda()">Borrar moneda</button>
                 <button class="logbtn" (click)="modalEditar.showModal()">Editar moneda</button>
             </div>
             <dialog method="modal" #modalEditar>
-                <app-create-currency (cerrar)="modalEditar.close()" [currency]="currency"></app-create-currency>
+                <app-create-currency (cerrarModal)="modalEditar.close()" [currency]="currency"></app-create-currency>
             </dialog>
     </div>
 </div>

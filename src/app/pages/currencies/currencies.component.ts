@@ -1,6 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Currency, CurrencyForCreation } from 'src/app/interfaces/currency';
+import { Currency } from 'src/app/interfaces/currency';
 
 import { CurrencyService } from 'src/app/services/currency.service';
 

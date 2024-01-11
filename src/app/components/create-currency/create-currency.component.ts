@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CurrencyService } from 'src/app/services/currency.service';
-import { CurrencyForCreation } from 'src/app/interfaces/currency';
+import { Currency } from 'src/app/interfaces/currency';
 import { generarMensajeExito, generarMensajeError } from 'src/app/helpers/message';
 import { FormsModule } from '@angular/forms';
 
@@ -16,15 +16,24 @@ export class CreateCurrencyComponent {
 
   currencyService = inject(CurrencyService);
   @Output() cerrarModal = new EventEmitter();
-  @Input() currency:CurrencyForCreation = {
+  @Input() currency:Currency = {
     currencyId: 0,
     currencyName: '',
     currencySymbol: '',
     currencyValue: 0,
-    userId: 0
   };
   async onSubmit(){
-    (this.currency.currencySymbol)?this.actualizarMoneda():this.agregarMoneda();
+    (this.currency.currencyId)?this.actualizarMoneda():this.agregarMoneda();
+  }
+  async actualizarMoneda() {
+    const res = await this.currencyService.update(this.currency);
+    this.cerrarModal.emit();
+    if(res){
+      generarMensajeExito('Contacto editado')
+    }else{
+      this.cerrarModal.emit();
+      generarMensajeError('Contacto no editado')
+    }
   }
   async agregarMoneda() {
     const res = await this.currencyService.create(this.currency);
@@ -33,20 +42,6 @@ export class CreateCurrencyComponent {
       generarMensajeExito('Moneda agregada')
     }else{
       generarMensajeError('Moneda no agregada')
-    }
-  }
-  async actualizarMoneda() {
-    const res = await this.currencyService.update(this.currency);
-    this.cerrarModal.emit();
-
-    if (this.currency.currencySymbol && this.currency.currencySymbol.length > 0) {
-      if (res) {
-        generarMensajeExito('Moneda actualizada');
-      } else {
-        generarMensajeError('Moneda no actualizada');
-      }
-    } else {
-      generarMensajeError('No existe moneda con el símbolo proporcionado');
     }
   }
   }

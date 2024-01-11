@@ -7,7 +7,7 @@
             <div class="fil1 rotate"></div>
             <div class="fil2 rotate"></div>
             <form #form="ngForm" (ngSubmit)="onSubmit()">
-            <h3 class="title">{{currency.currencySymbol?"Editar moneda":"Agregar moneda"}}<span class="point">.</span></h3>
+            <h3 class="title">{{currency.currencyId?"Editar moneda":"Crear moneda"}}<span class="point">.</span></h3>
             <div class="textinput">
                 <input type="text" placeholder="Ingrese nombre de la moneda"  name="name"  [(ngModel)]="currency.currencyName">
             </div>
@@ -15,9 +15,9 @@
                 <input type="text" placeholder="Ingrese simbolo de la moneda" name="symbol" [(ngModel)]="currency.currencySymbol">
             </div>
             <div class="textinput">
-                <input type="text" placeholder="Ingrese valor de la moneda" name="value" [(ngModel)]="currency.currencyValue">
+                <input type="number" placeholder="Ingrese valor de la moneda" name="value" [(ngModel)]="currency.currencyValue">
             </div>
-            <button  type="submit"  class="logbtn">crear</button>
+            <button  type="submit"  class="logbtn">{{currency.currencyId?"Editar":"Crear"}}</button>
             <button type="button"  class="logbtn" (click)="cerrarModal.emit()" >Cancelar</button>
     </form>
     </div>
