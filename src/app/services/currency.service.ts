@@ -14,14 +14,30 @@ export class CurrencyService extends ApiService{
         const resJson = await res.json();
         return resJson;
     };
-
+    async getById(currencyId:number | string):Promise<Currency | undefined>{
+        const res = await this.getAuth('Currency/'+currencyId);
+        const resJson = await res.json();
+        return resJson;
+    };
     async create(currency:CurrencyForCreation):Promise<boolean>{
-        if(currency.currencySymbol) return false;
+        if(currency.currencyId) return false;
         const res = await fetch(API+'Currency/crear-nueva-moneda',{
         method:'POST',
         headers:{
             "Content-type":"application/json",
         Authorization: "Bearer "+this.auth.token()
+        },
+        body: JSON.stringify(currency)
+        })
+        return res.ok
+    };
+    async update(currency:CurrencyForCreation):Promise<boolean>{
+        if(!currency.currencyId) return false;
+        const res = await fetch(API+'Currency?currencyId='+currency.currencyId,{
+        method:'PUT',
+        headers:{
+            "Content-type":"application/json",
+            Authorization: "Bearer "+this.auth.token()
         },
         body: JSON.stringify(currency)
         })
@@ -34,18 +50,6 @@ export class CurrencyService extends ApiService{
             "Content-type":"application/json",
             Authorization: "Bearer "+this.auth.token()
         },
-        })
-        return res.ok
-    };
-    async update(currency:CurrencyForCreation):Promise<boolean>{
-        if(!currency.currencySymbol) return false;
-        const res = await fetch(API+'Currency/actualizar-moneda',{
-        method:'PUT',
-        headers:{
-            "Content-type":"application/json",
-            Authorization: "Bearer "+this.auth.token()
-        },
-        body: JSON.stringify(currency)
         })
         return res.ok
     };

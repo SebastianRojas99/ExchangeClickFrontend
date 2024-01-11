@@ -17,6 +17,7 @@ export class CreateCurrencyComponent {
   currencyService = inject(CurrencyService);
   @Output() cerrarModal = new EventEmitter();
   @Input() currency:CurrencyForCreation = {
+    currencyId: 0,
     currencyName: '',
     currencySymbol: '',
     currencyValue: 0,

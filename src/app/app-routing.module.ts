@@ -30,6 +30,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/currencies/currencies.module').then(m => m.CurrenciesModule)
   },
   {
+    path:'currencies/:currencyId',
+    loadChildren: () => import('./pages/currency-detail/currency-detail.module').then(m => m.CurrencyDetailModule)
+  },
+  {
     path:'',// path vacio porque es la ruta principal
     redirectTo:'conversor',//se usa para redireccionar al conversor
     pathMatch:'full', // indica que la ruta debe ser exactamente igual a la que se indica en el path

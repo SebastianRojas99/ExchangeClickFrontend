@@ -1,6 +1,7 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Currency } from 'src/app/interfaces/currency';
+import { Currency, CurrencyForCreation } from 'src/app/interfaces/currency';
+
 import { CurrencyService } from 'src/app/services/currency.service';
 
 @Component({
@@ -8,13 +9,14 @@ import { CurrencyService } from 'src/app/services/currency.service';
   templateUrl: './currencies.component.html',
   styleUrls: ['./currencies.component.scss']
 })
-export class CurrenciesComponent {
+export class CurrenciesComponent implements OnInit {
+
   currencyService = inject(CurrencyService);
-  currencies: Currency[] = [];
+  currency: Currency[] = [];
+
   ngOnInit(): void {
     this.currencyService.getAll().then(res => {
-      this.currencies = res;
-      console.log("Lista de monedas:", res);
+      this.currency = res;
     });
   }
 }

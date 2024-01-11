@@ -9,6 +9,7 @@ import { ExchangeComponent } from './components/exchange/exchange.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { ProfileIconComponent } from "./components/profile-icon/profile-icon.component";
 import { CreateCurrencyComponent } from './components/create-currency/create-currency.component';
+import { CurrencyDetailComponent } from './pages/currency-detail/currency-detail.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { CreateCurrencyComponent } from './components/create-currency/create-cur
         HeaderComponent,
         FooterComponent,
         ProfileComponent,
+        CurrencyDetailComponent,
     ],
     providers: [],
     bootstrap: [AppComponent],
@@ -26,7 +28,7 @@ import { CreateCurrencyComponent } from './components/create-currency/create-cur
         FormsModule,
         ExchangeComponent,
         ProfileIconComponent,
-        CreateCurrencyComponent
+        CreateCurrencyComponent,
     ]
 })
 export class AppModule { }

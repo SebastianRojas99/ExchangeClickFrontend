@@ -1,6 +1,6 @@
 import { Component, Input, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Currency } from 'src/app/interfaces/currency';
+import { Currency, CurrencyForCreation } from 'src/app/interfaces/currency';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 

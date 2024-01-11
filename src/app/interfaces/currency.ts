@@ -9,7 +9,7 @@ export interface Currency
 }
 export interface CurrencyForCreation
 {
-    
+    currencyId: number;
     currencyName: string;
     currencySymbol: string;
     currencyValue: number;
