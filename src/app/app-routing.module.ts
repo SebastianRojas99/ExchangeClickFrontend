@@ -25,6 +25,15 @@ const routes: Routes = [
     loadChildren: () => import('./pages/profile/profile.module').then(m => m.ProfileModule)
   },
   {
+    path:'users',
+    canActivate:[usuariologGuard],
+    loadChildren: () => import('./pages/users/users.module').then(m => m.UsersModule)
+  },
+  {
+    path:'users/:userId',
+    loadChildren: () => import('./pages/user-detail/user-detail.module').then(m => m.UserDetailModule)
+  },
+  {
     path:'currencies',
     canActivate:[usuariologGuard],
     loadChildren: () => import('./pages/currencies/currencies.module').then(m => m.CurrenciesModule)
