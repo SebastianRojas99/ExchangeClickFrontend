@@ -19,4 +19,9 @@ export class UserService extends ApiService{
         console.log("API Response:", resJson);
         return resJson;
     }
+    async getUsers(): Promise<Profile[]> {
+        const res = await this.getAuth("User");
+        const resJson = await res.json();
+        return resJson;
+    }
 }
