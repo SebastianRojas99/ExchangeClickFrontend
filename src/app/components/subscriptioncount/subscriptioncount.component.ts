@@ -1,8 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UserService } from 'src/app/services/user.service';
 import { SC } from 'src/app/interfaces/user';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ProfileService } from 'src/app/services/profile.service';
 
 @Component({
   selector: 'app-subscriptioncount',
@@ -12,7 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./subscriptioncount.component.scss']
 })
 export class SubscriptioncountComponent {
-  userService = inject(UserService);
+  profileService = inject(ProfileService);
   activatedRoute = inject(ActivatedRoute);
   router = inject(Router);
   user:SC = {
@@ -21,7 +21,7 @@ export class SubscriptioncountComponent {
   }
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
-      this.userService.getSub().then(res => {
+      this.profileService.getSub().then(res => {
         if(res) this.user.subCount = res;
       });
       });

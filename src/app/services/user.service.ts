@@ -8,17 +8,7 @@ import { Profile } from '../interfaces/user';
 })
 
 export class UserService extends ApiService{
-    async getSub():Promise<number>{
-        const res = await this.getAuth("User/${Id}")
-        const resJson = await res.json();
-        return resJson;
-    };
-    async getProfile(): Promise<Profile | undefined> {
-        const res = await this.getAuth("User/Profile/${UserId}");
-        const resJson = await res.json();
-        console.log("API Response:", resJson);
-        return resJson;
-    }
+
     async getUsers(): Promise<Profile[]> {
         const res = await this.getAuth("User");
         const resJson = await res.json();
