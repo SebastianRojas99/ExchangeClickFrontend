@@ -1,0 +1,32 @@
+<div class="global">
+    <div class="container">
+        <div class="design">
+            <div class="fil4"></div>
+        </div>
+        <div class="login">
+            <div class="fil1 rotate"></div>
+            <div class="fil2 rotate"></div>
+            <form #form="ngForm" (ngSubmit)="onSubmit()">
+            <h3 class="title">{{userForCreation.userId?"Editar usuario":"Crear usuario"}}<span class="point">.</span></h3>
+            <div class="textinput">
+                <input type="text" placeholder="Ingrese nombre del usuario"  name="name"  [(ngModel)]="userForCreation.name">
+            </div>
+            <div class="textinput">
+                <input type="text" placeholder="Ingrese apellido del usuario" name="symbol" [(ngModel)]="userForCreation.lastName">
+            </div>
+            <div class="textinput">
+                <input type="text" placeholder="Ingrese email del usuario" name="symbol" [(ngModel)]="userForCreation.email">
+            </div>
+            <div class="textinput">
+                <input type="text" placeholder="Ingrese password del usuario" name="symbol" [(ngModel)]="userForCreation.password">
+            </div>
+            <div class="textinput">
+                <input type="text" placeholder="Ingrese username del usuario" name="value" [(ngModel)]="userForCreation.username">
+            </div>
+            <button  type="submit"  class="logbtn">{{userForCreation.userId?"Editar":"Crear"}}</button>
+            <button type="button"  class="logbtn" (click)="cerrarModal.emit()" >Cancelar</button>
+    </form>
+    </div>
+</div>
+</div>
+

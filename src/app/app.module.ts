@@ -10,6 +10,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { ProfileIconComponent } from "./components/profile-icon/profile-icon.component";
 import { CreateCurrencyComponent } from './components/create-currency/create-currency.component';
 import { CurrencyDetailComponent } from './pages/currency-detail/currency-detail.component';
+import { UserDetailComponent } from './pages/user-detail/user-detail.component';
+import { CreateUserComponent } from "./components/create-user/create-user.component";
 
 
 @NgModule({
@@ -19,6 +21,7 @@ import { CurrencyDetailComponent } from './pages/currency-detail/currency-detail
         FooterComponent,
         ProfileComponent,
         CurrencyDetailComponent,
+        UserDetailComponent,
     ],
     providers: [],
     bootstrap: [AppComponent],
@@ -29,6 +32,7 @@ import { CurrencyDetailComponent } from './pages/currency-detail/currency-detail
         ExchangeComponent,
         ProfileIconComponent,
         CreateCurrencyComponent,
+        CreateUserComponent
     ]
 })
 export class AppModule { }

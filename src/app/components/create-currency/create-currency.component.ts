@@ -29,10 +29,10 @@ export class CreateCurrencyComponent {
     const res = await this.currencyService.update(this.currency);
     this.cerrarModal.emit();
     if(res){
-      generarMensajeExito('Contacto editado')
+      generarMensajeExito('Moneda editada')
     }else{
       this.cerrarModal.emit();
-      generarMensajeError('Contacto no editado')
+      generarMensajeError('Moneda no editada')
     }
   }
   async agregarMoneda() {

@@ -1,6 +1,6 @@
 import { Component, Signal, WritableSignal, inject, signal } from '@angular/core';
 import { Router } from '@angular/router';
-import { RegisterData } from 'src/app/interfaces/user';
+import { ProfileCreationData, RegisterData } from 'src/app/interfaces/user';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -14,19 +14,24 @@ export class RegisterComponent {
   errorRegister: WritableSignal<boolean> = signal(false)
   cargando = signal(false);
 
-  RegisterData: RegisterData = {
-    Username: "",
-    Email:"",
-    Name: "",
-    LastName: "",
-    Password: "",
+  user: ProfileCreationData = {
+    username: "",
+    userId: 0,
+    name: '',
+    lastName: '',
+    email: '',
+    password: '',
+    role: '',
+    subscriptionId: 0,
+    subscriptionName: '',
+    subCount: 0
   }
 
   async register(){
     this.errorRegister.set(false);
     this.cargando.set(true);
     try{
-      const res = await this.authService.register(this.RegisterData);
+      const res = await this.authService.register(this.user);
       if(res.ok) {
         this.router.navigate(["/login"])
       }

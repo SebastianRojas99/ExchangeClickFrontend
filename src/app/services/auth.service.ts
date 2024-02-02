@@ -6,7 +6,7 @@ import {
     signal,
 } from '@angular/core';
 import { API } from '../constants/api';
-import { LoginData,RegisterData } from 'src/app/interfaces/user';
+import { LoginData,ProfileCreationData,RegisterData } from 'src/app/interfaces/user';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -39,13 +39,13 @@ export class AuthService {
     }
     }
 
-    async register(registerData: RegisterData) {
+    async register(user: ProfileCreationData) {
     const res = await fetch(API + 'User', {
         method: 'POST',
         headers: {
         'Content-Type': 'application/json',
         },
-        body: JSON.stringify(registerData),
+        body: JSON.stringify(user),
     });
     console.log('REGISTRANDO', res);
     return res;

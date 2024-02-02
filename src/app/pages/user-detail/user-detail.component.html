@@ -1,1 +1,18 @@
-<p>user-detail works!</p>
+<div class="global">
+    <div class="container">
+            <p class="nom">Nombre: {{user.name}}</p>
+            <p class="ape">Apellido: {{user.lastName}}</p>
+            <p> Email: {{user.email}}</p>
+            <p class="ape">Usuario: {{user.username}}</p>
+            <p class="ape">Rol: {{user.role}}</p>
+            <p class="ape">Cambios restantes: {{user.subCount}}</p>
+            <div class="cont-btn">
+                <button class="logbtn" (click)="borrarUsuario()">Borrar ususario</button>
+                <button class="logbtn" (click)="modalEditar.showModal()">Editar usuario</button>
+            </div>
+            <dialog method="modal" #modalEditar>
+                <app-create-user (cerrarModal)="modalEditar.close()" [userForCreation]="userForCreation"></app-create-user>
+            </dialog>
+    </div>
+</div>
+

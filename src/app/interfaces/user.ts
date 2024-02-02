@@ -3,21 +3,19 @@ import { Subscription } from "./subscription";
 export interface RegisterData extends User {
     Password: string,
 }
+export interface ProfileCreationData extends Profile{
+    password:string,
+}
 
 export interface User
 {
-    Email:string,
-    Username: string,
     Name: string,
     LastName: string,
-}
-export interface UserForCreation{
     Email:string,
     Username: string,
-    Name: string,
-    LastName: string,
-    Password:string,
-    Subscription:Subscription;
+    SubscriptionId: number,
+    SubCount:number,
+    Role:string|number,
 }
 
 export interface LoginData {
