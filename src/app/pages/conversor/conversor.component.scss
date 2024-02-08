@@ -3,7 +3,15 @@
     text-align: center;
     color:variables.$color-blanco-puro;
 }
-
+.container{
+    background-image: url("../../../assets/backgrounds.png");
+}
+.sub{
+    display: flex;
+    justify-content: end;
+    margin-right: 30px;
+    padding-top:20px;
+}
 .global{
     display: grid;//acomodar las 3 columnas y que una sea el menu, llamado app-sidebar
     grid-template-columns: 40% 50% 10%;//1fr es 1 fraccion, 3fr es 3 fracciones
@@ -11,11 +19,12 @@
     grid-template-areas: "app-sidebar app-conversor app-sidebar";//areas de la grilla
     align-items: center;
     height: 100vh;
-    background-color: variables.$color-oscuro-puro;
 }
+
 .region1 .region2 .region3{
-    margin: 0 auto;
-    background: none;
+    display: grid;
+    place-items: center;
+
 }
 
 .region2{
@@ -25,6 +34,10 @@
 .region3{
     display: grid;
     place-items: center;
+}
+.mobile-message{
+    color: variables.$color-blanco-puro;
+    font-size: 2.5rem;
 }
 
 //acomodar para modo celular vertical en media query

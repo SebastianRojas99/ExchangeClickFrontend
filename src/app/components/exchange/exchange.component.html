@@ -1,12 +1,14 @@
-<div class="inp-conversion">
-    <input type="text" [(ngModel)]="fromconversion.currencySymbol" placeholder="From currency">
-    <input type="text" [(ngModel)]="toconversion.currencySymbol" placeholder="To currency">
-    <input type="text" [(ngModel)]="quantity" placeholder="Quantity">
-</div>
-<div class="btn">
-    <button (click)="exchange()">Exchange</button>
-    <button (click)="swap()">Swap</button>
-</div>
-<div class="result">
-<p>{{this.conversionresult}}</p>
+<div class="global">
+    <div class="inp-conversion">
+        <input type="text" [(ngModel)]="fromconversion.currencySymbol" placeholder="From currency">
+        <input type="text" [(ngModel)]="toconversion.currencySymbol" placeholder="To currency">
+        <input type="text" [(ngModel)]="quantity" placeholder="Quantity">
+    </div>
+    <div class="btn">
+        <button (click)="exchange()">Exchange</button>
+        <button (click)="swap()">Swap</button>
+    </div>
+    <div class="result">
+    <p>{{this.conversionresult}}</p>
+    </div>
 </div>

@@ -1,7 +1,13 @@
-<app-currencylist  *ngFor="let list of currency" [currency]="list" [routerLink]="[list.currencyId]"></app-currencylist>
-<button class="fabb" (click)="dialogNuevaMoneda.showModal()">+</button>
-<dialog method="dialog" #dialogNuevaMoneda>
-    <app-create-currency (cerrarModal)="dialogNuevaMoneda.close()"></app-create-currency>
-</dialog>
-
+<div class="global">
+    <h2>Monedas</h2>
+    <div class="container">
+        <div class="currency">
+            <app-currencylist  *ngFor="let list of currency" [currency]="list" [routerLink]="[list.currencyId]"></app-currencylist>
+        </div>
+    </div>
+    <button class="fabb" (click)="dialogNuevaMoneda.showModal()">+</button>
+    <dialog method="dialog" #dialogNuevaMoneda>
+        <app-create-currency (cerrarModal)="dialogNuevaMoneda.close()"></app-create-currency>
+    </dialog>
+</div>
 

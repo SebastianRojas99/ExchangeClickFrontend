@@ -16,6 +16,17 @@ import { generarMensajeError, generarMensajeExito } from 'src/app/helpers/messag
 export class CreateUserComponent {
 userService = inject(UserService);
 @Output() cerrarModal = new EventEmitter();
+@Input() user: Profile = {
+  username: "",
+  userId: 0,
+  name: '',
+  lastName: '',
+  email: '',
+  role: '',
+  subscriptionId: 0,
+  subscriptionName: '',
+  subCount: 0
+}
 @Input() userForCreation: ProfileCreationData = {
   username: "",
   userId: 0,
@@ -32,7 +43,7 @@ async onSubmit(){
   (this.userForCreation.userId)?this.actualizarUsuario():this.agregarUsuario();
 }
 async actualizarUsuario() {
-  const res = await this.userService.update(this.userForCreation,this.userForCreation.userId,this.userForCreation.role);
+  const res = await this.userService.update(this.user,this.user.userId,this.user.role);
   this.cerrarModal.emit();
   if(res){
     generarMensajeExito('Contacto editado')

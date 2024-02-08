@@ -1,10 +1,16 @@
 @use "./../../../assets/variables.scss";
-.counter{
+.global{
     display: grid;
-    height: 50px;
     place-items: center;
-    margin: 0;
-    background-color: variables.$color-blanco-puro;
+    background-image: url("../../../assets/SubCount.png");
+    width: 250px;
+    height: 150px;
+    border-radius: 25px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    border: 1px solid variables.$color-oscuro-puro;
+}
+.counter{
+    place-items: center;
     font-size: 1.3rem;
-    color: variables.$color-oscuro-puro;
+    color: variables.$color-blanco-puro;
 }

@@ -34,15 +34,15 @@ export class CurrencyService extends ApiService{
     async update(currency:Currency):Promise<boolean>{
         if(!currency.currencyId) return false;
         const res = await fetch(API+"Currency?currencyId="+currency.currencyId,{
-          method:'PUT',
-          headers:{
+        method:'PUT',
+        headers:{
             "Content-type":"application/json",
             Authorization: "Bearer "+this.auth.token()
-          },
-          body: JSON.stringify(currency)
+        },
+        body: JSON.stringify(currency)
         })
         return res.ok
-      };
+    };
     async delete(currencyId:number):Promise<boolean>{
         const res = await fetch(API+'Currency?currencyId='+currencyId,{
         method:'DELETE',

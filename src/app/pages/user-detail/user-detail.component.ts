@@ -55,7 +55,7 @@ export class UserDetailComponent {
       cancelButtonText: 'Cancelar'
     }).then((result) => {
       if (result.isConfirmed) {
-        this.userService.delete(this.userForCreation.userId).then(res => {
+        this.userService.delete(this.user.userId).then(res => {
           if(res){
             Swal.fire(
               'Borrado!',

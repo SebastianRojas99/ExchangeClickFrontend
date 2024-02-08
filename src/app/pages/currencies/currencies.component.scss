@@ -1,9 +1,11 @@
-.fabb{
+@use "./../../../assets/variables.scss";
+
+.fabb {
     position: fixed;
     bottom: 20px;
     right: 20px;
     z-index: 1000;
-    background-color: #000;
+    background-color: variables.$color-principal;
     border-radius: 50%;
     width: 60px;
     height: 60px;
@@ -17,12 +19,45 @@
     line-height: 60px;
     text-align: center;
     text-decoration: none;
-    &:hover{
+    &:hover {
         background-color: #fff;
         color: #000;
     }
-    &:active{
+    &:active {
         box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2);
         transform: translateY(4px);
     }
 }
+
+.global{
+    background-image: url("../../../assets/COINS-CRUD-MENU.png");
+    height: 100vh;
+    display: grid;
+}
+
+
+.container {
+    display: grid;
+    place-items: center;
+    justify-content: start; /* Cambiado a "center" */
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.currency{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    margin-top: 20px;
+    width: 700px;
+}
+h2{
+    text-align: center;
+    margin-bottom: 20px;
+    //dar forma al titulo
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: variables.$color-blanco-puro;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+//completar version mobile, revisar currency con max-width 500px
