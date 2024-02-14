@@ -16,24 +16,13 @@ import { generarMensajeError, generarMensajeExito } from 'src/app/helpers/messag
 export class CreateUserComponent {
 userService = inject(UserService);
 @Output() cerrarModal = new EventEmitter();
-@Input() user: Profile = {
-  username: "",
-  userId: 0,
-  name: '',
-  lastName: '',
-  email: '',
-  role: '',
-  subscriptionId: 0,
-  subscriptionName: '',
-  subCount: 0
-}
 @Input() userForCreation: ProfileCreationData = {
-  username: "",
   userId: 0,
   name: '',
   lastName: '',
   email: '',
   password: '',
+  username: '',
   role: '',
   subscriptionId: 0,
   subscriptionName: '',
@@ -43,22 +32,22 @@ async onSubmit(){
   (this.userForCreation.userId)?this.actualizarUsuario():this.agregarUsuario();
 }
 async actualizarUsuario() {
-  const res = await this.userService.update(this.user,this.user.userId,this.user.role);
+  const res = await this.userService.update(this.userForCreation);
   this.cerrarModal.emit();
   if(res){
-    generarMensajeExito('Contacto editado')
+    generarMensajeExito('Usuario editado')
   }else{
     this.cerrarModal.emit();
-    generarMensajeError('Contacto no editado')
+    generarMensajeError('Usuario no editado')
   }
 }
 async agregarUsuario() {
   const res = await this.userService.create(this.userForCreation);
   this.cerrarModal.emit();
   if(res){
-    generarMensajeExito('Moneda agregada')
+    generarMensajeExito('Usuario agregado')
   }else{
-    generarMensajeError('Moneda no agregada')
+    generarMensajeError('Usuario no agregado')
   }
 }
 }

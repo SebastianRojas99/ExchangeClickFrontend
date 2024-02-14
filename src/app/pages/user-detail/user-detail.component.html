@@ -1,11 +1,11 @@
 <div class="global">
     <div class="container">
-            <p class="nom">Nombre: {{user.name}}</p>
-            <p class="ape">Apellido: {{user.lastName}}</p>
-            <p> Email: {{user.email}}</p>
-            <p class="ape">Usuario: {{user.username}}</p>
-            <p class="ape">Rol: {{user.role}}</p>
-            <p class="ape">Cambios restantes: {{user.subCount}}</p>
+            <p class="nom">Nombre: {{userForCreation.name}}</p>
+            <p class="ape">Apellido: {{userForCreation.lastName}}</p>
+            <p> Email: {{userForCreation.email}}</p>
+            <p class="ape">Usuario: {{userForCreation.username}}</p>
+            <p class="ape">Rol: {{userForCreation.role}}</p>
+            <p class="ape">Cambios restantes: {{userForCreation.subCount}}</p>
             <div class="cont-btn">
                 <button class="logbtn" (click)="borrarUsuario()">Borrar ususario</button>
                 <button class="logbtn" (click)="modalEditar.showModal()">Editar usuario</button>

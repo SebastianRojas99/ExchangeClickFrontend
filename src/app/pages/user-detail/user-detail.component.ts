@@ -14,17 +14,7 @@ export class UserDetailComponent {
   userService=inject(UserService);
   activatedRoute=inject(ActivatedRoute);
   router=inject(Router);
-  user:Profile={
-    userId: 0,
-    name: '',
-    lastName: '',
-    email: '',
-    username: '',
-    role: '',
-    subscriptionId: 0,
-    subscriptionName: '',
-    subCount: 0
-  }
+
   userForCreation:ProfileCreationData={
     userId: 0,
     name: '',
@@ -40,7 +30,7 @@ export class UserDetailComponent {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
       this.userService.getById(params['userId']).then(res => {
-        if(res) this.user = res;
+        if(res) this.userForCreation = res;
       });
       });
   }
@@ -55,7 +45,7 @@ export class UserDetailComponent {
       cancelButtonText: 'Cancelar'
     }).then((result) => {
       if (result.isConfirmed) {
-        this.userService.delete(this.user.userId).then(res => {
+        this.userService.delete(this.userForCreation.userId).then(res => {
           if(res){
             Swal.fire(
               'Borrado!',

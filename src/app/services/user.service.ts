@@ -14,7 +14,7 @@ export class UserService extends ApiService{
         const resJson = await res.json();
         return resJson;
     }
-    async getById(userId:number| string): Promise<Profile|undefined> {
+    async getById(userId:number| string): Promise<ProfileCreationData|undefined> {
         const res = await this.getAuth("User/GetUserById/"+userId);
         const resJson = await res.json();
         console.log(resJson);
@@ -32,9 +32,9 @@ export class UserService extends ApiService{
         })
         return res.ok
     };
-    async update(user: Profile, userId: number, newRole:string): Promise<boolean> {
-        if (!userId) return false;
-        const res = await fetch(API + "User/Update?userId=" + userId + "&newRole=" + newRole, {
+    async update(user: ProfileCreationData): Promise<boolean> {
+        if (!user.userId) return false;
+        const res = await fetch(API + "User?userId=" + user.userId, {
             method: 'PUT',
             headers: {
                 "Content-type": "application/json",

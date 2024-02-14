@@ -15,13 +15,19 @@
                 <input type="text" placeholder="Ingrese apellido del usuario" name="symbol" [(ngModel)]="userForCreation.lastName">
             </div>
             <div class="textinput">
-                <input type="text" placeholder="Ingrese email del usuario" name="symbol" [(ngModel)]="userForCreation.email">
+                <input type="email" placeholder="Ingrese email del usuario" name="symbol" [(ngModel)]="userForCreation.email">
             </div>
             <div class="textinput">
-                <input type="text" placeholder="Ingrese password del usuario" name="symbol" [(ngModel)]="userForCreation.password">
+                <input type="password" placeholder="Ingrese password del usuario" name="symbol" [(ngModel)]="userForCreation.password">
             </div>
             <div class="textinput">
                 <input type="text" placeholder="Ingrese username del usuario" name="value" [(ngModel)]="userForCreation.username">
+            </div>
+            <div class="textinput">
+                <input type="text" *ngIf="userForCreation.userId" placeholder="Ingrese sub id del usuario" name="value" [(ngModel)]="userForCreation.subscriptionId">
+            </div>
+            <div class="textinput">
+                <input type="text" *ngIf="userForCreation.userId" placeholder="Ingrese rol del usuario" name="value" [(ngModel)]="userForCreation.role">
             </div>
             <button  type="submit"  class="logbtn">{{userForCreation.userId?"Editar":"Crear"}}</button>
             <button type="button"  class="logbtn" (click)="cerrarModal.emit()" >Cancelar</button>
