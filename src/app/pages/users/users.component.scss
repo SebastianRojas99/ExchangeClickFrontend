@@ -1,3 +1,48 @@
+@use "./../../../assets/variables.scss";
+
+.fabb {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: variables.$color-principal;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2);
+    transition: all 0.1s ease-in-out;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    line-height: 60px;
+    text-align: center;
+    text-decoration: none;
+    &:hover {
+        background-color: #fff;
+        color: #000;
+    }
+    &:active {
+        box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2);
+        transform: translateY(4px);
+    }
+}
+.global{
+    background-image: url('../../../assets/AdminMenuAdminImage.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: grid;
+}
+.container{
+    display: grid;
+    place-items: center;
+    justify-content: start; /* Cambiado a "center" */
+    padding-left: 20px;
+    padding-right: 20px;
+}
 app-user-list{
     //lista aesthetic
         display: flex;
@@ -9,3 +54,5 @@ app-user-list{
         max-width: 1200px;
         padding: 0 15px;
 }
+
+

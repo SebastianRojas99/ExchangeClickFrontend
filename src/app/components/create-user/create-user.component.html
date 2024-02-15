@@ -24,10 +24,10 @@
                 <input type="text" placeholder="Ingrese username del usuario" name="value" [(ngModel)]="userForCreation.username">
             </div>
             <div class="textinput">
-                <input type="text" *ngIf="userForCreation.userId" placeholder="Ingrese sub id del usuario" name="value" [(ngModel)]="userForCreation.subscriptionId">
+                <input type="number" *ngIf="userForCreation.userId" placeholder="Ingrese sub id del usuario" name="value" [(ngModel)]="userForCreation.subscriptionId">
             </div>
             <div class="textinput">
-                <input type="text" *ngIf="userForCreation.userId" placeholder="Ingrese rol del usuario" name="value" [(ngModel)]="userForCreation.role">
+                <input type="number" *ngIf="userForCreation.userId" placeholder="Ingrese rol del usuario" name="value" [(ngModel)]="userForCreation.role">
             </div>
             <button  type="submit"  class="logbtn">{{userForCreation.userId?"Editar":"Crear"}}</button>
             <button type="button"  class="logbtn" (click)="cerrarModal.emit()" >Cancelar</button>

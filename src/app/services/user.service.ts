@@ -33,8 +33,9 @@ export class UserService extends ApiService{
         return res.ok
     };
     async update(user: ProfileCreationData): Promise<boolean> {
+        console.log(user);
         if (!user.userId) return false;
-        const res = await fetch(API + "User?userId=" + user.userId, {
+        const res = await fetch(API + "User?userId="+user.userId, {
             method: 'PUT',
             headers: {
                 "Content-type": "application/json",

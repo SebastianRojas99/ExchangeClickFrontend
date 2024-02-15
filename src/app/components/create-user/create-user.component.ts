@@ -36,9 +36,11 @@ async actualizarUsuario() {
   this.cerrarModal.emit();
   if(res){
     generarMensajeExito('Usuario editado')
+    console.log(res)
   }else{
     this.cerrarModal.emit();
     generarMensajeError('Usuario no editado')
+    console.log(res)
   }
 }
 async agregarUsuario() {
