@@ -1,6 +1,6 @@
+
 .global{
     display: grid;
-    //hacer un dise;o re lindo para mostrar mis monedas que son la lista y que queden peque;os en una caja porque es un componente standalone
     grid-template-columns: repeat(6, 1fr);
     grid-gap: 1rem;
     padding: 1rem;
@@ -8,5 +8,6 @@
     border-radius: 0.5rem;
     box-shadow: 0 0 1rem rgba(0,0,0,0.2);
     margin: 1rem;
+    width: 700px;
 }
 

@@ -1,6 +1,8 @@
 <div class="global">
     <div class="container">
-        <app-user-list class="user-list" *ngFor="let list of users" [users]="list" [routerLink]="[list.userId]"></app-user-list>
+        <div class="users">
+            <app-user-list class="user-list" *ngFor="let list of users" [users]="list" [routerLink]="[list.userId]"></app-user-list>
+        </div>
     </div>
     <button class="fabb" (click)="dialogNuevoUser.showModal()">+</button>
     <dialog method="dialog" #dialogNuevoUser>

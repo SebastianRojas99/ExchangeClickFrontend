@@ -1,24 +1,28 @@
-
-<div class="container">
-    <div class="sub">
-        <app-subscriptioncount class="counter"></app-subscriptioncount>
+<div class="global">
+    <div class="subcounter">
+      <app-subscriptioncount class="counter"></app-subscriptioncount>
     </div>
-    <p id="mensaje" class="mobile-message"*ngIf="isMobileResolution()">para una mejor experiencia movil descarga la app</p>
-    <div class="global">
-        <div class="region1">
-            <div class="listcomp">
-                <h3 class="title">Moneda</h3>
-                
-                <app-currencylist  *ngFor="let c of currencies" [currency]="c" [routerLink]="[c.currencyId]"></app-currencylist>
+    <p id="mensaje" class="mobile-message" *ngIf="isMobileResolution()">
+      Para una mejor experiencia móvil, descarga la app.
+    </p>
+    <div class="container">
+        <div class="currency">
+            <h3 class="title">Moneda</h3>
+            <div class="region1">
+                <app-currencylist *ngFor="let c of currencies" [currency]="c" [routerLink]="[c.currencyId]"></app-currencylist>
             </div>
         </div>
-        <div class="region2">
+        <div class="conversor">
             <h3 class="title">Convertir</h3>
-            <app-exchange ></app-exchange>
+            <div class="region2">
+                <app-exchange></app-exchange>
+            </div>
         </div>
-        <div class="region3">
-            
-            <app-sidebar></app-sidebar>
-        </div>
+        <div class="bar">
+            <h3 class="title">Menu</h3>
+            <div class="region3">
+                <app-sidebar></app-sidebar>
+            </div>
+        </div>    
     </div>
-</div>
+  </div>

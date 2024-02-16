@@ -36,7 +36,8 @@
     place-items: center;
     margin-top: 30px;
     button {
-    width: 80%;
+    width: 100%;
+    max-width: 300px;
     margin: 0 auto;
     margin-bottom: 15px;
     padding: 10px 20px;
@@ -70,6 +71,7 @@
     place-items: center;
     height: 50px;
     width: 100%;
+    max-width: 400px;
     margin: 35px auto 0;
     border: 1px solid #ccc;
     border-radius: 4px;

@@ -1,59 +1,70 @@
 @use "./../../../assets/variables.scss";
-.title{
-    text-align: center;
-    color:variables.$color-blanco-puro;
-}
-.container{
-    background-image: url("../../../assets/backgrounds.png");
-}
-.sub{
+
+.subcounter{
     display: flex;
     justify-content: end;
     margin-right: 30px;
     padding-top:20px;
 }
 .global{
-    display: grid;//acomodar las 3 columnas y que una sea el menu, llamado app-sidebar
-    grid-template-columns: 40% 50% 10%;//1fr es 1 fraccion, 3fr es 3 fracciones
-    grid-template-rows: 1fr;
-    grid-template-areas: "app-sidebar app-conversor app-sidebar";//areas de la grilla
-    align-items: center;
-    height: 100vh;
-}
+    background-image: url("../../../assets/backgrounds.png");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-size: large;
+    letter-spacing: 1px;
 
-.region1 .region2 .region3{
+}
+.container{
     display: grid;
-    place-items: center;
-
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "currency conversor bar ";
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    place-content: center;
+    
 }
+.title{
+    color: variables.$color-blanco-puro;
+}
+.currency .conversion .bar{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.region1{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    margin-top: 20px;
+    width: 100%;
+    max-height: 300px; /* Ajusta la altura máxima según tus necesidades */
+    overflow-y: auto; /* Habilita el scroll vertical cuando sea necesario */
+}
+
 
 .region2{
-    display: grid;
-    place-items: center;
-}
-.region3{
-    display: grid;
-    place-items: center;
-}
-.mobile-message{
-    color: variables.$color-blanco-puro;
-    font-size: 2.5rem;
+    color: variables.$color-oscuro-puro;
 }
 
-//acomodar para modo celular vertical en media query
-@media (max-width: 768px) {
-    .global{
+
+//FALTA DE RESPONSIVE------------------------------------------------------------------
+@media (max-width: 768px){
+    .container{
+        grid-template-areas: "currency" "conversor" "bar";
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr 1fr;
-        grid-template-areas: "app-sidebar" "region1" "region2";
-        height: auto;
+        width: 100%;
     }
-    .mobile-message {
-        display: block;
+    .currency .conversion .bar{
+        grid-template-columns: 1fr;
     }
-    .region1 .region2 .region3{
-        border-left: none;
-    }
-    //pasar sidebar hacia arriba y en fila
     
 }
