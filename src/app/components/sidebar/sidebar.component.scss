@@ -1,10 +1,79 @@
 @use "./../../../assets/variables.scss";
 .global{
+    width: 110px;
+    height: 100%;
+    padding: 30px 15px;
+    top: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 100%;
-    color: variables.$color-blanco-puro;
-    font-size: large;
-    letter-spacing: 1px;
+    justify-content: space-between;
+    transition: width 0.2s;
+
 }
+
+.icons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+ul{
+    list-style: none;
+    padding: 0 15px;
+    
+}
+
+ul li{
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+ul li img{
+    margin-left: 0;
+    width: 64px;
+    height: 64px;
+}
+
+ul li a{
+    text-decoration: none;
+    color: variables.$color-blanco-puro;
+    white-space: nowrap;
+    display: none;
+}
+
+.global:hover{
+    width: 250px;
+}
+
+.global:hover ul li a{
+    display: block;
+}
+.global:hover ul li img{
+    margin-left: 10px;
+}
+.global:hover ul li{
+    justify-content: flex-end;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .global {
+      flex-direction: column;
+      justify-content: space-around;
+      width: 100%;
+      height: auto;
+    }
+  }

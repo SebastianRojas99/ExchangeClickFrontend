@@ -68,6 +68,23 @@
 
   }
 
+  
+::-webkit-scrollbar{ 
+  width: 20px;
+}
+::-webkit-scrollbar-thumb{
+  background: variables.$color-principal;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover{
+  background: variables.$color-blanco-puro;
+}
+::-webkit-scrollbar-track{
+  background: variables.$color-primario-claro;
+  border-radius: 10px;
+  box-shadow: inset 0 0 5px grey;}
+
+
   @media (max-width: 768px) {
     .global{
       background-image: url('../../../assets/AdminMenuAdminImage.jpg');

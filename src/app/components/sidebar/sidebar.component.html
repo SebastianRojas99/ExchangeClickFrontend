@@ -1,6 +1,10 @@
 <div class="global" >
-    <a [routerLink]="['/profile/0']">Perfil</a>
-    <a [routerLink]="['/currencies']">Monedas</a>
-    <a *ngIf="isAdmin" [routerLink]="['/users']">Usuarios</a>
-    <a>Cambiar subscripcion</a>
+    <ul>
+        <li><a [routerLink]="['/profile/0']">Perfil</a><img class="icons" src="../../../assets/icons/hombre.png"></li>
+        <li><a [routerLink]="['/currencies']">Monedas</a><img class="icons"src="../../../assets/icons/monedas.png"></li>
+        <li><a *ngIf="isAdmin" [routerLink]="['/users']">Usuarios</a><img class="icons" src="../../../assets/icons/apoyo.png"> </li>
+        <li><a>Subscripcion</a><img class="icons" src="../../../assets/icons/repetir.png"></li>
+        <li><a [routerLink]="['/']" (click)="logout()">Salir</a><img class="icons" src="../../../assets/icons/exportar.png"></li>
+    </ul>
 </div>
+
