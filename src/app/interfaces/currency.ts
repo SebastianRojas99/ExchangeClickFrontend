@@ -19,12 +19,13 @@ export interface c2
     userId:number;
 }
 
+export interface FromConversion
+{
+    currencySymbol:string;
+}
 export interface ToConversion
 {
     currencySymbol:string;
 }
 
-export interface FromConversion
-{
-    currencySymbol:string;
-}
+

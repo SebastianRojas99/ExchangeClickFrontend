@@ -45,4 +45,15 @@ export class ConversionService extends ApiService
           throw error; // Re-lanza el error para que sea manejado en la capa superior
         }
       }
+
+      async getAllFrom():Promise<FromConversion[]>{
+        const res = await this.getAuth("Currency/get-symbols")
+        const resJson = await res.json();
+        return resJson;
+    };
+      async getAllTo():Promise<ToConversion[]>{
+        const res = await this.getAuth("Currency/get-symbols")
+        const resJson = await res.json();
+        return resJson;
+    };
 }

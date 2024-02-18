@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import {  FromConversion, ToConversion } from 'src/app/interfaces/currency';
 import { ConversionService } from 'src/app/services/conversion.service';
 import { FormsModule } from '@angular/forms';
+import { CurrencyService } from 'src/app/services/currency.service';
 
 @Component({
   selector: 'app-exchange',
@@ -13,12 +14,14 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./exchange.component.scss']
 })
 export class ExchangeComponent {
-
+  currencyService = inject(CurrencyService)
   conversionService = inject(ConversionService)
   quantity:number = 0
-  @Input() fromconversion:FromConversion  = { currencySymbol:'' };
-  @Input() toconversion:ToConversion = { currencySymbol:'' };
+  @Input() fromconversion: FromConversion = { currencySymbol: '', /* otras propiedades */ };
+  @Input() toconversion: ToConversion = { currencySymbol: '', /* otras propiedades */ };
   conversionresult:number = 0
+
+
   async exchange() {
     try {
       const res = await this.conversionService.conversion(
