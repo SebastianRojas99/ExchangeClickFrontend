@@ -1,4 +1,4 @@
-.global{
+.container{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 1rem;
@@ -9,4 +9,15 @@
     margin: 1rem;
     width: 800px;
 }
+
+
+@media (max-width: 768px) {//crear tamaño de pantalla para dispositivos moviles apto
+    .container{
+        grid-template-rows: auto;
+        grid-template-columns: auto;
+        width: 100%;
+        
+    }
+}
+
 

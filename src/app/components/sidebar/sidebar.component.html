@@ -4,7 +4,7 @@
         <li><a [routerLink]="['/currencies']">Monedas</a><img class="icons"src="../../../assets/icons/monedas.png"></li>
         <li><a *ngIf="isAdmin" [routerLink]="['/users']">Usuarios</a><img class="icons" src="../../../assets/icons/apoyo.png"> </li>
         <li><a>Subscripcion</a><img class="icons" src="../../../assets/icons/repetir.png"></li>
-        <li><a [routerLink]="['/']" (click)="logout()">Salir</a><img class="icons" src="../../../assets/icons/exportar.png"></li>
+        <li class="logout"><a [routerLink]="['/']" (click)="logout()">Salir</a><img class="icons" src="../../../assets/icons/exportar.png"></li>
     </ul>
 </div>
 
