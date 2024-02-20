@@ -30,7 +30,6 @@ export class AuthService {
         });
         if (!res.ok) return false;
         const tokenRecibido = await res.text();
-        console.log('LOGUEANDO', tokenRecibido);
         localStorage.setItem('token', tokenRecibido);
         this.token.set(tokenRecibido);
         return true;

@@ -9,16 +9,15 @@ import { ChangeSubscription } from "../interfaces/subscription";
 
 export class SubscriptionService extends ApiService
 {
-    async update(subscription: ChangeSubscription):Promise<boolean> {
+    async updateSubscription(subscription: ChangeSubscription):Promise<boolean> {
         console.log(subscription);
-        if (!subscription.userId) return false;
-        const res = await fetch(API + "User?userId="+subscription.userId, {
+        const res = await fetch(API + "User/UpdateSubscription/?userId="+subscription.userId, {
             method: 'PUT',
             headers: {
                 "Content-type": "application/json",
                 Authorization: "Bearer " + this.auth.token()
             },
-            body: JSON.stringify(subscription)
+            body: JSON.stringify(subscription.subscriptionName)
         }); 
         return res.ok;
 }

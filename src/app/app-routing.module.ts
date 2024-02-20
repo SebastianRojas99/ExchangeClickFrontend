@@ -26,6 +26,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/profile/profile.module').then(m => m.ProfileModule)
   },
   {
+    path:'subscriptions/:userId',
+    loadChildren: () => import('./pages/subscriptions/subscriptions.module').then(m => m.SubscriptionsModule)
+  },
+  {
     path:'users',
     canActivate:[isAdminGuard],
     loadChildren: () => import('./pages/users/users.module').then(m => m.UsersModule)
