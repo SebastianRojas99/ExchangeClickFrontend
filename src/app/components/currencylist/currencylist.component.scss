@@ -1,4 +1,6 @@
 @use "./../../../assets/variables.scss";
+
+
 .global{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -9,16 +11,30 @@
     box-shadow: 0 0 1rem rgba(0,0,0,0.2);
     margin: 1rem;
     width: 800px;
+
 }
 
+p { // Asegurarse de que los elementos de la lista tengan un fondo blanco
+    background-color: variables.$color-blanco-puro;
+    
+    // Agrega aquí cualquier otro estilo que necesites para los elementos de la lista
+}
 
-@media (max-width: 768px) {//crear tamaño de pantalla para dispositivos moviles apto
+@media only screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+    .global {
+      grid-template-columns: repeat(3, 1fr); // Ajustar las columnas para MacBook Air 13"
+      width: 80%; // Ajustar el ancho para MacBook Air 13"
+    }
+}
+
+@media (max-width: 768px) {
     .global{
         grid-template-rows: auto;
         grid-template-columns:repeat(3, 1fr) ;
         width: 80%;
-        
     }
 }
-
-

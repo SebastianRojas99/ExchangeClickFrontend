@@ -48,14 +48,14 @@
 }
 
 
-.currency {
+.container .currency {
     display: grid;
     grid-template-rows: 1fr 1fr;
     gap: 10px;
     margin-top: 20px;
-    width: 100%;
-    max-height: 300px; /* Ajusta la altura máxima según tus necesidades */
-    overflow-y: auto; /* Habilita el scroll vertical cuando sea necesario */
+    width: 650px;
+    max-height: 300px;
+    overflow-y: auto;
 }
 
 h2{
@@ -86,3 +86,9 @@ h2{
 
 
 //completar version mobile, revisar currency con max-width 500px
+
+@media (max-width: 768px) {
+    .container .currency {
+        width: 300px;
+    }
+}

@@ -88,8 +88,7 @@
   @media (max-width: 768px) {
     .global{
       background-image: url('../../../assets/AdminMenuAdminImage.jpg');
-      background-position: center;
-      background-size: cover;
+      background-size:auto;
       background-repeat: no-repeat;
       height: 100vh;
       display: grid;
