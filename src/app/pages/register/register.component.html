@@ -1,0 +1,30 @@
+<div class="global">
+    <div class="container">
+        <div class="design">
+            <div class="fil4"></div>
+        </div>
+        <div class="login">
+            <div class="fil1 rotate"></div>
+            <div class="fil2 rotate"></div>
+            <form #form="ngForm" (ngSubmit)="register()">
+            <h3 class="title">Registro<span class="point">.</span></h3>
+            <div class="textinput">
+                <input type="text" placeholder="Ingrese nombre"  name="name"  [(ngModel)]="userForCreation.name">
+            </div>
+            <div class="textinput">
+                <input type="text" placeholder="Ingrese apellido" name="symbol" [(ngModel)]="userForCreation.lastName">
+            </div>
+            <div class="textinput">
+                <input type="email" placeholder="Ingrese email" name="symbol" [(ngModel)]="userForCreation.email">
+            </div>
+            <div class="textinput">
+                <input type="password" placeholder="Ingrese password" name="symbol" [(ngModel)]="userForCreation.password">
+            </div>
+            <div class="textinput">
+                <input type="text" placeholder="Ingrese username" name="value" [(ngModel)]="userForCreation.username">
+            </div>
+            <button  type="submit"  class="logbtn">Registrarme</button>
+    </form>
+    </div>
+</div>
+</div>

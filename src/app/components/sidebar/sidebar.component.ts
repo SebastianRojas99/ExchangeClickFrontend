@@ -25,4 +25,7 @@ export class SidebarComponent extends ApiService {
     async ngOnInit() {
         this.isAdmin = await this.profileService.isAdmin(); // Verifica si el usuario es administrador
     }
+    async toRoute(route: string) {
+        await this.router.navigate([route]);
+    }
 }

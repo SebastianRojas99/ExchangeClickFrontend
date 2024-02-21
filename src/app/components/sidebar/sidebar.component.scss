@@ -73,4 +73,63 @@ ul li a{
 
 
 
+@media (max-width: 768px) {
+    .global {
+        width: 100%;
+        height: 80px;
+        padding: 0; 
+        margin: 0; 
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(15px);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        transition: width 0.2s;
+        border-radius: 10px;
+        top: auto;
 
+
+    }
+
+    .icons, ul {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        padding: 0; // Ajusta este valor según sea necesario
+        justify-content: space-around;
+        width: 100%; // Asegúrate de que ul ocupe todo el ancho
+    }
+
+    ul li {
+        margin: 0; // Ajusta este valor según sea necesario
+        padding: 0; // Ajusta este valor según sea necesario
+    }
+
+    ul li img {
+        width: 64px; // Ajusta este valor según sea necesario
+        height: 64px; // Ajusta este valor según sea necesario
+    }
+
+    ul li a {
+        display: none;
+    }
+
+    .global:hover {
+        width: 100%; 
+    }
+
+    .global:hover ul li a {
+        display: none; 
+    }
+
+    .global:hover ul li img {
+        margin-left: 0; 
+    }
+
+    .global:hover ul li {
+        justify-content: center; 
+    }
+}

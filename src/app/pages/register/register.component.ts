@@ -14,7 +14,7 @@ export class RegisterComponent {
   errorRegister: WritableSignal<boolean> = signal(false)
   cargando = signal(false);
 
-  user: ProfileCreationData = {
+  userForCreation: ProfileCreationData = {
     username: "",
     userId: 0,
     name: '',
@@ -31,7 +31,7 @@ export class RegisterComponent {
     this.errorRegister.set(false);
     this.cargando.set(true);
     try{
-      const res = await this.authService.register(this.user);
+      const res = await this.authService.register(this.userForCreation);
       if(res.ok) {
         this.router.navigate(["/login"])
       }

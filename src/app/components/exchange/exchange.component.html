@@ -1,7 +1,11 @@
 <div class="global">
     <div class="inp-conversion">
-        <input type="text" [(ngModel)]="fromconversion.currencySymbol" placeholder="From currency">
-        <input type="text" [(ngModel)]="toconversion.currencySymbol" placeholder="To currency">
+        <select [(ngModel)]="fromconversion">
+            <option *ngFor="let conversion of fromConversions" [value]="conversion.currencySymbol">{{conversion.currencySymbol}}</option>
+        </select>
+        <select [(ngModel)]="toconversion">
+            <option *ngFor="let conversion of toConversions" [value]="conversion.currencySymbol">{{conversion.currencySymbol}}</option>
+        </select>
         <input type="text" [(ngModel)]="quantity" placeholder="Quantity">
     </div>
     <div class="btn">

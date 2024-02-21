@@ -39,7 +39,7 @@ export class AuthService {
     }
 
     async register(user: ProfileCreationData) {
-    const res = await fetch(API + 'User', {
+    const res = await fetch(API + 'User/userCreation', {
         method: 'POST',
         headers: {
         'Content-Type': 'application/json',

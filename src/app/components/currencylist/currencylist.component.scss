@@ -1,9 +1,10 @@
-.container{
+@use "./../../../assets/variables.scss";
+.global{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 1rem;
     padding: 1rem;
-    background-color: #f5f5f5;
+    background-color: variables.$color-blanco-puro;
     border-radius: 0.5rem;
     box-shadow: 0 0 1rem rgba(0,0,0,0.2);
     margin: 1rem;
@@ -12,10 +13,10 @@
 
 
 @media (max-width: 768px) {//crear tamaño de pantalla para dispositivos moviles apto
-    .container{
+    .global{
         grid-template-rows: auto;
-        grid-template-columns: auto;
-        width: 100%;
+        grid-template-columns:repeat(3, 1fr) ;
+        width: 80%;
         
     }
 }

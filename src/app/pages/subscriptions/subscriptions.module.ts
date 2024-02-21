@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { SubscriptionsRoutingModule } from './subscriptions-routing.module';
 import { SubscriptionsComponent } from './subscriptions.component';
-import { ChangesubComponent } from "../../components/changesub/changesub.component";
 
 
 @NgModule({
@@ -13,7 +12,6 @@ import { ChangesubComponent } from "../../components/changesub/changesub.compone
     imports: [
         CommonModule,
         SubscriptionsRoutingModule,
-        ChangesubComponent
     ]
 })
 export class SubscriptionsModule { }

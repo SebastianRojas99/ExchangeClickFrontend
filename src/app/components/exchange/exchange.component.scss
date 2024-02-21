@@ -1,36 +1,36 @@
 @use "./../../../assets/variables.scss";
 
-//card
-
-
-
 
 .inp-conversion {
-    display: grid;
-    grid-template-columns: auto;
-    align-items: center;
-    margin: 0 auto;
-    width: 20rem;
+  display: grid;
+  grid-template-columns: auto;
+  align-items: start;
+  margin: 0 auto;
+  width: 100%;
+  gap: 20px;
+  max-width: 500px;
+  height: 100%;
+  select, input[type="text"], input[type="number"] {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 1rem;
+      margin-bottom: 10px;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
 
-    input[type="text"] {
-    width: 100%;
-    padding: 1rem;
-    margin-bottom: 10px;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
+      &:focus {
+          border-color: variables.$color-principal;
+          outline: none;
+          box-shadow: 0 0 5px variables.$color-principal;
+      }
 
-    &:focus {
-        border-color: variables.$color-principal;
-        outline: none;
-        box-shadow: 0 0 5px variables.$color-principal;
-    }
-
-    &::placeholder {
-        color: variables.$color-gris-puro;
-    }
-    }
+      &::placeholder {
+          color: variables.$color-gris-puro;
+      }
+  }
 }
+
 .btn {
     display: grid;
     place-items: center;
