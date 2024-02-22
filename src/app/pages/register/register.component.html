@@ -7,23 +7,26 @@
             <div class="fil1 rotate"></div>
             <div class="fil2 rotate"></div>
             <form #form="ngForm" (ngSubmit)="register()">
-            <h3 class="title">Registro<span class="point">.</span></h3>
+            <h2 class="title">Registrarme</h2>
             <div class="textinput">
-                <input type="text" placeholder="Ingrese nombre"  name="name"  [(ngModel)]="userForCreation.name">
+                <input type="text" placeholder="Ingrese nombre del usuario" [required]="true" [minlength]="2" [maxlength]="25" name="firstname" [(ngModel)]="userForCreation.name" #firstname="ngModel" pattern="^[a-zA-Z\s]*$">
+                <p class="error" *ngIf="firstname.invalid && (firstname.touched || firstname.dirty)">Ingrese un nombre válido</p>
+            </div>
+            <div class="textinput"> 
+                    <input type="text" id="lastname" [required]="true" [minlength]="2" [maxlength]="25" placeholder="Ingrese apellido del usuario" name="lastname" [(ngModel)]="userForCreation.lastName" #lastname="ngModel" pattern="^[a-zA-Z\s]*$">
+                    <p class="error" *ngIf="lastname.invalid && (lastname.touched || lastname.dirty)">Ingrese un apellido válido</p>                  
             </div>
             <div class="textinput">
-                <input type="text" placeholder="Ingrese apellido" name="symbol" [(ngModel)]="userForCreation.lastName">
+                <input type="email" placeholder="Ingrese email del usuario" [required]="true" [minlength]="10" [maxlength]="35" name="email" [(ngModel)]="userForCreation.email">
             </div>
             <div class="textinput">
-                <input type="email" placeholder="Ingrese email" name="symbol" [(ngModel)]="userForCreation.email">
+                <input type="password" placeholder="Ingrese password del usuario" [required]="true" [minlength]="6" [maxlength]="64" name="passw" [(ngModel)]="userForCreation.password">
             </div>
             <div class="textinput">
-                <input type="password" placeholder="Ingrese password" name="symbol" [(ngModel)]="userForCreation.password">
+                <input type="text" placeholder="Ingrese username del usuario" [required]="true" [minlength]="6" name="user" [(ngModel)]="userForCreation.username">
             </div>
-            <div class="textinput">
-                <input type="text" placeholder="Ingrese username" name="value" [(ngModel)]="userForCreation.username">
-            </div>
-            <button  type="submit"  class="logbtn">Registrarme</button>
+            <button  type="submit" [disabled]="form.invalid" class="logbtn">Registrarme</button>
+            <p>¿Posees una cuenta? - <a [routerLink]="['/login']" routerLinkActive="router-link-active" >Ingresa</a></p>
     </form>
     </div>
 </div>
