@@ -9,15 +9,16 @@
             <form #form="ngForm" (ngSubmit)="onSubmit()">
             <h3 class="title">{{currency.currencyId?"Editar moneda":"Crear moneda"}}<span class="point">.</span></h3>
             <div class="textinput">
-                <input type="text" placeholder="Ingrese nombre de la moneda"  name="name"  [(ngModel)]="currency.currencyName">
+                <input type="text" placeholder="Ingrese nombre de la moneda" [maxlength]="20"  name="name" #currencyname="ngModel" pattern="^[a-zA-Z\s]*$"  [(ngModel)]="currency.currencyName">
+                <p class="error" *ngIf="currencyname.invalid && (currencyname.touched || currencyname.dirty)">Ingrese un nombre de moneda válido</p>
             </div>
             <div class="textinput">
-                <input type="text" placeholder="Ingrese simbolo de la moneda" name="symbol" [(ngModel)]="currency.currencySymbol">
+                <input type="text" placeholder="Ingrese simbolo de la moneda" [maxlength]="4" name="symbol" [(ngModel)]="currency.currencySymbol">
             </div>
             <div class="textinput">
                 <input type="number" placeholder="Ingrese valor de la moneda" name="value" [(ngModel)]="currency.currencyValue">
             </div>
-            <button  type="submit"  class="logbtn">{{currency.currencyId?"Editar":"Crear"}}</button>
+            <button  type="submit" [disabled]="form.invalid" class="logbtn">{{currency.currencyId?"Editar":"Crear"}}</button>
             <button type="button"  class="logbtn" (click)="cerrarModal.emit()" >Cancelar</button>
     </form>
     </div>

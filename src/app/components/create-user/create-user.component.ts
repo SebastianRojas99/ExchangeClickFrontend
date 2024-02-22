@@ -57,4 +57,5 @@ async agregarUsuario() {
     generarMensajeError('Usuario no agregado')
   }
 }
+
 }

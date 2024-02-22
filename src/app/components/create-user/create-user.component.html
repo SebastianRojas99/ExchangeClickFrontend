@@ -9,19 +9,21 @@
             <form #form="ngForm" (ngSubmit)="onSubmit()">
             <h3 class="title">{{userForCreation.userId?"Editar usuario":"Crear usuario"}}<span class="point">.</span></h3>
             <div class="textinput">
-                <input type="text" placeholder="Ingrese nombre del usuario"  name="nombre"  [(ngModel)]="userForCreation.name">
+                <input type="text" placeholder="Ingrese nombre del usuario" [maxlength]="25" name="firstname" [(ngModel)]="userForCreation.name" #firstname="ngModel" pattern="^[a-zA-Z\s]*$">
+                <p class="error" *ngIf="firstname.invalid && (firstname.touched || firstname.dirty)">Ingrese un nombre válido</p>
+            </div>
+            <div class="textinput"> 
+                    <input type="text" id="lastname" [maxlength]="25" placeholder="Ingrese apellido del usuario" name="lastname" [(ngModel)]="userForCreation.lastName" #lastname="ngModel" pattern="^[a-zA-Z\s]*$">
+                    <p class="error" *ngIf="lastname.invalid && (lastname.touched || lastname.dirty)">Ingrese un apellido válido</p>                  
             </div>
             <div class="textinput">
-                <input type="text" placeholder="Ingrese apellido del usuario" name="apellido" [(ngModel)]="userForCreation.lastName">
+                <input type="email" placeholder="Ingrese email del usuario" [maxlength]="35" name="email" [(ngModel)]="userForCreation.email">
             </div>
             <div class="textinput">
-                <input type="email" placeholder="Ingrese email del usuario" name="email" [(ngModel)]="userForCreation.email">
+                <input type="password" placeholder="Ingrese password del usuario" [maxlength]="64" name="passw" [(ngModel)]="userForCreation.password">
             </div>
             <div class="textinput">
-                <input type="password" placeholder="Ingrese password del usuario" name="passw" [(ngModel)]="userForCreation.password">
-            </div>
-            <div class="textinput">
-                <input type="text" placeholder="Ingrese username del usuario" name="user" [(ngModel)]="userForCreation.username">
+                <input type="text" placeholder="Ingrese username del usuario" [minlength]="6" name="user" [(ngModel)]="userForCreation.username">
             </div>
             <div class="textinput" *ngIf="userForCreation.userId">
                 <input type="number"  placeholder="Ingrese sub id del usuario" name="subid" [(ngModel)]="userForCreation.subscriptionId">
@@ -32,7 +34,7 @@
                     <option [ngValue]="1">User</option>
                 </select>
             </div>
-            <button  type="submit"  class="logbtn">{{userForCreation.userId?"Editar":"Crear"}}</button>
+            <button  type="submit" [disabled]="form.invalid"  class="logbtn">{{userForCreation.userId?"Editar":"Crear"}}</button>
             <button type="button"  class="logbtn" (click)="cerrarModal.emit()" >Cancelar</button>
     </form>
     </div>
