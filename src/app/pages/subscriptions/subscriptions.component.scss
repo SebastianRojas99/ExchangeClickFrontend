@@ -13,9 +13,9 @@
   
   display: flex;
   justify-content: space-between;
-  gap: 10px; /* Reducir el espacio entre las tarjetas */
+  gap: 10px;
   flex-wrap: wrap;
-  width: 90%; /* Aumentar el ancho del contenedor de las tarjetas */
+  width: 90%;
 }
 
 .card {
@@ -27,7 +27,7 @@
   margin: 10px;
   text-align: center;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-  flex: 1 0 25%; /* Reducir el ancho mínimo de las tarjetas */
+  flex: 1 0 25%;
   height: 300px;
   display: flex;
   flex-direction: column;
@@ -51,23 +51,25 @@
   }
 }
 
-/* ... */
 
-/* Para pantallas de hasta 1920px */
+
+
 @media (max-width: 1920px) {
   .card {
     flex: 1 0 25%;
   }
 }
 
-/* Para MacBook de 13 pulgadas */
+
 @media (min-width: 1200px) and (max-width: 1440px) {
-  .card {
-    flex: 1 0 40%;
+  .container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px; 
+    justify-items: center;
   }
 }
 
-/* Para dispositivos móviles */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;

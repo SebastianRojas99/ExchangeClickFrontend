@@ -79,27 +79,34 @@
     color: variables.$color-blanco-puro;
     }
 }
+
+@media (max-width: 1440px) {
+    .btn{
+      margin-top: 10px;
+    }
+}
+
 @media (max-width: 768px) {
     .inp-conversion {
-      width: 100%; /* Cambiar el ancho al 100% para adaptarse a dispositivos móviles */
+      width: 100%;
       max-width: 250px;
     }
   
     .btn {
-      margin-top: 20px; /* Reducir el margen superior para dispositivos móviles */
+      margin-top: 20px;
     }
   
     .result {
-      margin-top: 20px; /* Reducir el margen superior para dispositivos móviles */
+      margin-top: 20px;
     }
   
     .container {
-      width: 100%; /* Cambiar el ancho al 100% para adaptarse a dispositivos móviles */
-      margin: 0; /* Eliminar el margen para que ocupe todo el ancho disponible */
+      width: 100%;
+      margin: 0;
     }
     
     .container p {
-      text-align: center; /* Centrar el texto en dispositivos móviles */
+      text-align: center;
     }
   }
   

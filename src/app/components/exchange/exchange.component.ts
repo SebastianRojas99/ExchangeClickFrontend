@@ -47,15 +47,24 @@ export class ExchangeComponent implements OnInit {
       if (!fromConversion || !toConversion) {
         throw new Error('No se encuentra moneda');
       }
+      if (this.quantity<=0){
+        throw new Error('No se puede realizar la conversion con valor 0');
+      }
       const res = await this.conversionService.conversion(
         fromConversion,
         toConversion,
         this.quantity
       );
+      
       this.conversionresult = Number(res.conversionRate);
-    } catch (error) {
 
-      generarMensajeError('TE QUEDASTE SIN INTENTOS, ACTUALIZA TU SUSCRIPCION PARA SEGUIR USANDO EL CONVERSOR DE MONEDAS');
+    } catch (error) {
+      if (this.quantity<=0){
+        generarMensajeError('No se puede realizar la conversion con valor 0');
+      }else{
+        generarMensajeError('Compra o actualiza tu suscripción para realizar conversiones.');
+      }
+      
     }
   }
 

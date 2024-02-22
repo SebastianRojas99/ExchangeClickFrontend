@@ -25,10 +25,11 @@ export class SubscriptionsComponent {
   proSub: ChangeSubscription = {
     userId: 0,
     subscriptionName: 'Subscription Pro',
-   
-    
   }
-  
+  sinSub: ChangeSubscription = {
+    userId: 0,
+    subscriptionName: 'Sin Suscripcion',
+  }
 
   async freeSubscription(){
     const res = await this.subscriptionService.updateSubscription(this.freeSub);
@@ -46,6 +47,13 @@ export class SubscriptionsComponent {
     const res = await this.subscriptionService.updateSubscription(this.proSub);
     if(res){
       generarMensajeExito('Tu suscripción ha sido actualizada a Pro')
+    }
+  }
+  //cancelar subscripcion
+  async cancelSub(){
+    const res = await this.subscriptionService.updateSubscription(this.sinSub);
+    if(res){
+      generarMensajeExito('Tu suscripción ha sido cancelada')
     }
   }
 }
