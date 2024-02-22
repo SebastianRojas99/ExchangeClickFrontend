@@ -9,22 +9,22 @@
             <form #form="ngForm" (ngSubmit)="onSubmit()">
             <h3 class="title">{{userForCreation.userId?"Editar usuario":"Crear usuario"}}<span class="point">.</span></h3>
             <div class="textinput">
-                <input type="text" placeholder="Ingrese nombre del usuario"  name="name"  [(ngModel)]="userForCreation.name">
+                <input type="text" placeholder="Ingrese nombre del usuario"  name="nombre"  [(ngModel)]="userForCreation.name">
             </div>
             <div class="textinput">
-                <input type="text" placeholder="Ingrese apellido del usuario" name="symbol" [(ngModel)]="userForCreation.lastName">
+                <input type="text" placeholder="Ingrese apellido del usuario" name="apellido" [(ngModel)]="userForCreation.lastName">
             </div>
             <div class="textinput">
-                <input type="email" placeholder="Ingrese email del usuario" name="symbol" [(ngModel)]="userForCreation.email">
+                <input type="email" placeholder="Ingrese email del usuario" name="email" [(ngModel)]="userForCreation.email">
             </div>
             <div class="textinput">
-                <input type="password" placeholder="Ingrese password del usuario" name="symbol" [(ngModel)]="userForCreation.password">
+                <input type="password" placeholder="Ingrese password del usuario" name="passw" [(ngModel)]="userForCreation.password">
             </div>
             <div class="textinput">
-                <input type="text" placeholder="Ingrese username del usuario" name="value" [(ngModel)]="userForCreation.username">
+                <input type="text" placeholder="Ingrese username del usuario" name="user" [(ngModel)]="userForCreation.username">
             </div>
             <div class="textinput" *ngIf="userForCreation.userId">
-                <input type="number"  placeholder="Ingrese sub id del usuario" name="value" [(ngModel)]="userForCreation.subscriptionId">
+                <input type="number"  placeholder="Ingrese sub id del usuario" name="subid" [(ngModel)]="userForCreation.subscriptionId">
             </div>
             <div class="textinput" *ngIf="userForCreation.userId">
                 <select name="role" [(ngModel)]="userForCreation.role">

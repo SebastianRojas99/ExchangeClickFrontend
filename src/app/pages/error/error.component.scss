@@ -1,0 +1,25 @@
+.global {
+    background-image: url(../../../assets/NotFoundPage1.png);
+    background-size: cover; /* Asegura que la imagen de fondo cubra todo el elemento */
+    background-position: center; /* Centra la imagen de fondo */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+    height: 100vh;
+    color: white;
+    margin: 0 auto; /* Corregido el typo 'aut' a 'auto' */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.global h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.global a {
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+}

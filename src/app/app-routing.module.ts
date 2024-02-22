@@ -51,6 +51,10 @@ const routes: Routes = [
     path:'',// path vacio porque es la ruta principal
     redirectTo:'conversor',//se usa para redireccionar al conversor
     pathMatch:'full', // indica que la ruta debe ser exactamente igual a la que se indica en el path
+  },
+  {
+    path: '**',
+    loadChildren: () => import('./pages/error/error.module').then(m => m.ErrorModule)
   }
 ];
 
