@@ -1,62 +1,78 @@
-//crear 3 tarjetas para cada tipo de suscripcion
-// Path: src/app/pages/subscriptions/subscriptions.component.html
-//crear 3 tarjetas para cada tipo de suscripcion
-
-.subFree {
-  background-color: #f5f5f5;
-  border: 1px solid #e0e0e0;
-  border-radius: 5px;
-  padding: 20px;
-  margin: 20px;
-  text-align: left;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-}
-.subTrial {
-  background-color: #f5f5f5;
-  border: 1px solid #e0e0e0;
-  border-radius: 5px;
-  padding: 20px;
-  margin: 20px;
-  text-align: left;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-}
-.subPro {
-  background-color: #f5f5f5;
-  border: 1px solid #e0e0e0;
-  border-radius: 5px;
-  padding: 20px;
-  margin: 20px;
-  text-align: left;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-}
-//contenedor de tarjetas
-.container {
+@use "./../../../assets/variables.scss";
+.global {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(45deg, variables.$color-loginyregister,  variables.$color-principal);
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
 }
-//global de las tarjetas
 
-.global {
-  background-color: #f5f5f5;
-  border: 1px solid #e0e0e0;
+.container {
+  
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; /* Reducir el espacio entre las tarjetas */
+  flex-wrap: wrap;
+  width: 90%; /* Aumentar el ancho del contenedor de las tarjetas */
+}
+
+.card {
+  background: variables.$color-gris-puro;
+  backdrop-filter: blur(15px);
+  border: 1px solid variables.$color-gris-puro;
   border-radius: 5px;
   padding: 20px;
-  margin: 20px;
+  margin: 10px;
   text-align: center;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-  width: 100%;
+  flex: 1 0 25%; /* Reducir el ancho mínimo de las tarjetas */
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: start;
+  color: variables.$color-blanco-puro;
 }
 
-//version mobil de las tarjetas, 1 abajo de otra o 2 para ipad
+.btn{
+  background: variables.$color-principal;
+  color: variables.$color-blanco-puro;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 150px;
+  &:hover{
+    background: variables.$color-blanco-puro;
+    color: variables.$color-oscuro-puro;
+  }
+}
 
+/* ... */
+
+/* Para pantallas de hasta 1920px */
+@media (max-width: 1920px) {
+  .card {
+    flex: 1 0 25%;
+  }
+}
+
+/* Para MacBook de 13 pulgadas */
+@media (min-width: 1200px) and (max-width: 1440px) {
+  .card {
+    flex: 1 0 40%;
+  }
+}
+
+/* Para dispositivos móviles */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
   }
-  .global {
-    width: 100%;
+  .card {
+    flex: 1 0 100%;
   }
 }
-

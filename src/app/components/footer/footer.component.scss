@@ -1,7 +1,7 @@
 @use "./../../../assets/variables.scss";
 
 footer{
-    background: linear-gradient(45deg, #233151, #0E173A);
+    background: linear-gradient(45deg, variables.$color-loginyregister,  variables.$color-principal);
     padding: 5px 0; // Reducir aún más el padding vertical
 }
 

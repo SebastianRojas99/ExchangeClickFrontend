@@ -5,6 +5,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { UserService } from 'src/app/services/user.service';
 import { FormsModule } from '@angular/forms';
 import { generarMensajeError, generarMensajeExito } from 'src/app/helpers/message';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-create-user',
@@ -15,6 +16,7 @@ import { generarMensajeError, generarMensajeExito } from 'src/app/helpers/messag
 })
 export class CreateUserComponent {
 userService = inject(UserService);
+cd = inject(ChangeDetectorRef);
 @Output() cerrarModal = new EventEmitter();
 @Input() userForCreation: ProfileCreationData = {
   userId: 0,
@@ -28,6 +30,7 @@ userService = inject(UserService);
   subscriptionName: '',
   subCount: 0
 }
+
 async onSubmit(){
   (this.userForCreation.userId)?this.actualizarUsuario():this.agregarUsuario();
 }
@@ -37,6 +40,7 @@ async actualizarUsuario() {
   if(res){
     generarMensajeExito('Usuario editado')
     console.log(res)
+    this.cd.detectChanges();
   }else{
     this.cerrarModal.emit();
     generarMensajeError('Usuario no editado')
@@ -48,6 +52,7 @@ async agregarUsuario() {
   this.cerrarModal.emit();
   if(res){
     generarMensajeExito('Usuario agregado')
+    this.cd.detectChanges();
   }else{
     generarMensajeError('Usuario no agregado')
   }

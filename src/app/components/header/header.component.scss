@@ -4,7 +4,7 @@ header{
     position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    background: linear-gradient(45deg, #233151, #0E173A);
+    background: linear-gradient(45deg, variables.$color-loginyregister,  variables.$color-principal);
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     place-items: center;
     padding: 3px;

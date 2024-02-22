@@ -1,21 +1,31 @@
 <div class="global">
     <div class="container">
-        <div class="subFree">
-            <h2>Subscripcion Free</h2>
-            <p>Subscripcion gratuita con acceso a todas las funcionalidades de la aplicacion</p>
-            
-            <button (click)="freeSubscription()">Cambiar</button>
+        <div class="card subFree">
+            <div class="card-header">
+                <h2>Subscripcion Free</h2>
+            </div>
+            <div class="card-body">
+                <p>Subscripcion gratuita con acceso a todas las funcionalidades de la aplicacion</p>
+                <button class="btn" (click)="freeSubscription()">Cambiar</button>
+            </div>
         </div>
-        <div class="subTrial">
-            <h2>Subscripcion Trial</h2>
-            <p>Subscripcion de prueba con acceso a todas las funcionalidades de la aplicacion</p>
-            <button (click)="trialSubscription()">Cambiar</button>
+        <div class="card subTrial">
+            <div class="card-header">
+                <h2>Subscripcion Trial</h2>
+            </div>
+            <div class="card-body">
+                <p>Subscripcion estandar con acceso a todas las funcionalidades de la aplicacion</p>
+                <button class="btn" (click)="trialSubscription()">Cambiar</button>
+            </div>
         </div>
-        <div class="subPro">
-            <h2>Subscripcion Pro</h2>
-            <p>Subscripcion de paga con acceso a todas las funcionalidades de la aplicacion</p>
-            <button (click)="proSubscription()">Cambiar</button>
+        <div class="card subPro">
+            <div class="card-header">
+                <h2>Subscripcion Pro</h2>
+            </div>
+            <div class="card-body">
+                <p>Subscripcion de paga con acceso a todas las funcionalidades de la aplicacion</p>
+                <button class="btn" (click)="proSubscription()">Cambiar</button>
+            </div>
         </div>
     </div>
 </div>
-

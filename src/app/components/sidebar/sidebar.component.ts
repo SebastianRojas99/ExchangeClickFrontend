@@ -1,4 +1,4 @@
-import { Component,Input, inject } from '@angular/core';
+import { ChangeDetectorRef, Component,Input, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { Profile } from 'src/app/interfaces/user';
@@ -15,9 +15,11 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class SidebarComponent extends ApiService {
     router = inject(Router);
-      logout(){
-        this.auth.logout();
-      }
+    cd = inject(ChangeDetectorRef);
+    logout(){
+      this.auth.logout();
+      this.cd.detectChanges();
+    }
   
     isAdmin: boolean = true;
     profileService = inject(ProfileService);

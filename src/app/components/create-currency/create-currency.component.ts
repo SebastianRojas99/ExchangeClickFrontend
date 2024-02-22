@@ -4,6 +4,7 @@ import { CurrencyService } from 'src/app/services/currency.service';
 import { Currency } from 'src/app/interfaces/currency';
 import { generarMensajeExito, generarMensajeError } from 'src/app/helpers/message';
 import { FormsModule } from '@angular/forms';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-create-currency',
@@ -15,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 export class CreateCurrencyComponent {
 
   currencyService = inject(CurrencyService);
+  cd = inject(ChangeDetectorRef);
   @Output() cerrarModal = new EventEmitter();
   @Input() currency:Currency = {
     currencyId: 0,
@@ -30,6 +32,7 @@ export class CreateCurrencyComponent {
     this.cerrarModal.emit();
     if(res){
       generarMensajeExito('Moneda editada')
+      this.cd.detectChanges();
     }else{
       this.cerrarModal.emit();
       generarMensajeError('Moneda no editada')
@@ -40,6 +43,8 @@ export class CreateCurrencyComponent {
     this.cerrarModal.emit();
     if(res){
       generarMensajeExito('Moneda agregada')
+      this.cd.detectChanges();
+      
     }else{
       generarMensajeError('Moneda no agregada')
     }

@@ -7,7 +7,7 @@
   align-items: start;
   margin: 0 auto;
   width: 100%;
-  gap: 20px;
+  gap: 10px;
   max-width: 500px;
   height: 100%;
   select, input[type="text"], input[type="number"] {
@@ -67,16 +67,13 @@
     }
 }
 .result {
-    display: grid;
-    place-items: center;
     height: 50px;
     width: 100%;
     max-width: 400px;
-    margin: 35px auto 0;
+    margin: 0 auto;
     border: 1px solid #ccc;
     border-radius: 4px;
     background-color: variables.$color-principal;
-
     p {
     font-size: 18px;
     color: variables.$color-blanco-puro;

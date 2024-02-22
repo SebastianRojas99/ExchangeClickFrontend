@@ -50,12 +50,13 @@
 
 .container .currency {
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     gap: 10px;
     margin-top: 20px;
-    width: 650px;
+    width: 100%; /* Cambiado a 100% */
     max-height: 300px;
     overflow-y: auto;
+    overflow-x: hidden; /* Agregado para ocultar el scroll horizontal */
 }
 
 h2{
@@ -89,6 +90,7 @@ h2{
 
 @media (max-width: 768px) {
     .container .currency {
-        width: 300px;
+        width: 100%;
+        overflow-x: auto;
     }
 }

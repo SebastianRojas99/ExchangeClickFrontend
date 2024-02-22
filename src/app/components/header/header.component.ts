@@ -1,8 +1,9 @@
-import { Component, Input, inject } from '@angular/core';
+import { Component, ElementRef, Input, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ApiService } from 'src/app/services/api.service';
 import { Router } from '@angular/router';
 import { Profile } from 'src/app/interfaces/user';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -11,8 +12,10 @@ import { Profile } from 'src/app/interfaces/user';
 })
 export class HeaderComponent extends ApiService {
   router = inject(Router);
+  cd = inject(ChangeDetectorRef);
     logout(){
       this.auth.logout();
+      this.cd.detectChanges();
     }
 
     
@@ -20,4 +23,5 @@ export class HeaderComponent extends ApiService {
       const url = this.router.url;
       return url.includes('/login') || url.includes('/register');
     }
+
   }

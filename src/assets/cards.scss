@@ -1,0 +1,47 @@
+@use "../assets/variables.scss";
+
+.global {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: variables.$color-primario-claro;
+}
+
+.container {
+    background-color: variables.$color-blanco-puro;
+    padding: 30px; /* Aumentado el padding */
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    width: 400px; /* Aumentado el ancho */
+    text-align: center;
+}
+
+.properties {
+    font-size: 20px; /* Aumentado el tamaño de fuente */
+    color: #333;
+    margin-bottom: 15px; /* Aumentado el margen inferior */
+}
+
+.cont-btn {
+    margin-top: 30px; /* Aumentado el margen superior */
+    display: flex;
+    justify-content: space-between; /* Añadido para espaciar los botones */
+}
+
+.logbtn {
+    background-color: variables.$color-secundario;
+    color: variables.$color-blanco-puro;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 20px; /* Aumentado el padding */
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    flex: 1; /* Añadido para que los botones ocupen todo el espacio disponible */
+    margin: 0 10px; /* Añadido para dar espacio entre los botones */
+}
+
+.logbtn:hover {
+    background-color: variables.$color-secundario-claro;
+}
